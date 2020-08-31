@@ -6,9 +6,9 @@ export default function Form() {
   const [habits, setHabits] = useState([])
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input name="habit" type="text" placeholder="Insert a habit" />
-      </form>
+      <Container onSubmit={handleSubmit}>
+        <Input name="habit" type="text" placeholder="Insert a habit" />
+      </Container>
       <List habits={habits} deleteHabit={deleteHabit} />
     </>
   )
@@ -25,3 +25,13 @@ export default function Form() {
     setHabits(habits.filter((habit) => selectedHabit !== habit))
   }
 }
+
+const Container = styled.form`
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+`
+const Input = styled.input`
+  width: 300px;
+  height: 30px;
+`
