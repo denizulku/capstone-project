@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import Habit from './HabitItem'
 
-export default function List({ habits, deleteHabit }) {
+export default function List({ habits }) {
   return (
     <HabitList>
-      {habits.map((habit) => (
+      {habits.map((habit, completed) => (
         <div>
-          <Habit>
-            {habit}
-            <button onClick={() => deleteHabit(habit)}> x </button>
-          </Habit>
+          <HabitContainer>
+            <Habit checked={completed} text={habit} />
+          </HabitContainer>
         </div>
       ))}
     </HabitList>
@@ -20,13 +20,12 @@ const HabitList = styled.section`
   margin-top: 20px;
   margin-left: 15%;
 `
-const Habit = styled.div`
+const HabitContainer = styled.div`
+  margin-top: 10px;
   width: 260px;
   height: 25px;
-  margin-top: 5px;
-  padding-left: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background-color: #ffc179;
   border-radius: 10px;

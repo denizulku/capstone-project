@@ -9,7 +9,7 @@ export default function Form() {
       <Container onSubmit={handleSubmit}>
         <Input name="habit" type="text" placeholder="Insert a habit" />
       </Container>
-      <List habits={habits} deleteHabit={deleteHabit} />
+      <List habits={habits} />
     </>
   )
 
@@ -19,10 +19,6 @@ export default function Form() {
     const input = form.habit
     setHabits([input.value, ...habits])
     form.reset()
-  }
-
-  function deleteHabit(selectedHabit) {
-    setHabits(habits.filter((habit) => selectedHabit !== habit))
   }
 }
 
