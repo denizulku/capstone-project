@@ -1,11 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function List({ habits }) {
+export default function List({ habits, deleteHabit }) {
   return (
     <section>
       {habits.map((habit) => (
-        <Habit>{habit}</Habit>
+        <Habit>
+          {habit}
+          <button onClick={() => deleteHabit(habit)}> x </button>
+        </Habit>
       ))}
     </section>
   )
