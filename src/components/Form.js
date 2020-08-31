@@ -3,7 +3,6 @@ import styled from "styled-components";
 import List from "./List";
 
 export default function Form() {
-  //   const [inputValue, setInputValue] = useState();
   const [habits, setHabits] = useState([]);
   return (
     <>
@@ -18,8 +17,7 @@ export default function Form() {
     e.preventDefault();
     const form = e.target;
     const input = form.habit;
-    setHabits([...habits, input.value]);
-    // setInputValue("");
+    setHabits([input.value, ...habits]);
     form.reset();
   }
 }
