@@ -18,13 +18,16 @@ export default function List({ habits, deleteHabit }) {
 
 const HabitList = styled.section`
   margin-top: 20px;
+  margin-left: 15%;
 `
 const Habit = styled.div`
   width: 260px;
+  height: 25px;
   margin-top: 5px;
   padding-left: 20px;
   display: flex;
   justify-content: space-between;
-  background-color: crimson;
+  align-items: center;
+  background-color: #ffc179;
   border-radius: 10px;
 `
