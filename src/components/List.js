@@ -3,18 +3,18 @@ import styled from 'styled-components'
 
 export default function List({ habits, deleteHabit }) {
   return (
-    <section>
+    <Habit>
       {habits.map((habit) => (
-        <Habit>
+        <div>
           {habit}
           <button onClick={() => deleteHabit(habit)}> x </button>
-        </Habit>
+        </div>
       ))}
-    </section>
+    </Habit>
   )
 }
 
-const Habit = styled.div`
+const Habit = styled.section`
   background-color: crimson;
-  width: 100px;
+  width: 260px;
 `
