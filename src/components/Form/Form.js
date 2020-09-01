@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import List from '../List'
+import List from '../List/List'
 
 export default function Form() {
   const [habits, setHabits] = useState([])

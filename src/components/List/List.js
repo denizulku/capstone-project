@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Habit from './HabitItem'
+import Habit from '../Habit/HabitItem'
 
 export default function List({ habits }) {
   return (

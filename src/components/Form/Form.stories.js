@@ -1,5 +1,5 @@
 import React from 'react'
-import Input from '../../src/components/Form/Form'
+import Input from './Form'
 
 export default {
   title: 'HabitInput',
