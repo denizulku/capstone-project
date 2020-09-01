@@ -18,7 +18,7 @@ export default function List({ habits }) {
 
 const HabitList = styled.section`
   margin-top: 20px;
-  margin-left: 15%;
+  margin-left: 70px;
 `
 const HabitContainer = styled.div`
   margin-top: 10px;
