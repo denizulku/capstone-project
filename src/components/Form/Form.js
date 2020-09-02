@@ -6,9 +6,9 @@ export default function Form() {
   const [habits, setHabits] = useState([])
   return (
     <>
-      <formContainer onSubmit={handleSubmit}>
+      <FormContainer onSubmit={handleSubmit}>
         <InputStyled name="habit" type="text" placeholder="Insert a habit" />
-      </formContainer>
+      </FormContainer>
       <List habits={habits} />
     </>
   )
@@ -22,7 +22,7 @@ export default function Form() {
   }
 }
 
-const formContainer = styled.form`
+const FormContainer = styled.form`
   margin-top: 20px;
   display: flex;
   justify-content: center;
