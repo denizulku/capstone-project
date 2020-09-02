@@ -7,7 +7,7 @@ export default function Form() {
   return (
     <>
       <formContainer onSubmit={handleSubmit}>
-        <Input name="habit" type="text" placeholder="Insert a habit" />
+        <InputStyled name="habit" type="text" placeholder="Insert a habit" />
       </formContainer>
       <List habits={habits} />
     </>
@@ -27,7 +27,7 @@ const formContainer = styled.form`
   display: flex;
   justify-content: center;
 `
-const Input = styled.input`
+const InputStyled = styled.input`
   width: 300px;
   height: 30px;
 `
