@@ -6,10 +6,10 @@ import Habit from '../Habit/HabitItem'
 export default function List({ habits }) {
   return (
     <HabitList>
-      {habits.map((habit, completed) => (
-        <div>
+      {habits.map((habit, index) => (
+        <div key={index}>
           <HabitContainer>
-            <Habit checked={completed} text={habit} />
+            <Habit text={habit} />
           </HabitContainer>
         </div>
       ))}
