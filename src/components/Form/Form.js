@@ -2,14 +2,12 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import List from '../List/List'
 
-export default function Form() {
-  const [habits, setHabits] = useState([])
+export default function Form({ habits, onSubmit }) {
   return (
     <>
       <Container onSubmit={handleSubmit}>
         <Input name="habit" type="text" placeholder="Insert a habit" />
       </Container>
-      <List habits={habits} />
     </>
   )
 
@@ -17,7 +15,7 @@ export default function Form() {
     e.preventDefault()
     const form = e.target
     const input = form.habit
-    setHabits([input.value, ...habits])
+    onSubmit(input.value)
     form.reset()
   }
 }
