@@ -1,15 +1,17 @@
 import React from 'react'
-import HabitContainer from './List'
+import List from './List'
 
 export default {
   title: 'List',
-  component: HabitContainer,
+  component: List,
 }
 
-const Template = (args) => <HabitContainer {...args} />
+const Template = (args) => <List {...args} />
 
-export const ListItem = Template.bind({})
+export const Primary = Template.bind({})
 
-ListItem.args = {
-  primary: true,
+Primary.args = {
+  habits: ['foo', 'bar'],
 }
+
+Primary.argTypes = { onClick: { action: 'checkHabit' } }
