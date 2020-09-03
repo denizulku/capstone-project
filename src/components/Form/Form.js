@@ -5,9 +5,9 @@ import PropTypes from 'prop-types'
 export default function Form({ habits, onSubmit }) {
   return (
     <>
-      <Container onSubmit={handleSubmit}>
+      <FormContainer onSubmit={handleSubmit}>
         <InputStyled name="habit" type="text" placeholder="Insert a habit" />
-      </Container>
+      </FormContainer>
     </>
   )
 
@@ -20,7 +20,7 @@ export default function Form({ habits, onSubmit }) {
   }
 }
 
-const Container = styled.form`
+const FormContainer = styled.form`
   margin-top: 20px;
   display: flex;
   justify-content: center;
