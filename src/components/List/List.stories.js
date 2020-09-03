@@ -1,14 +1,15 @@
 import React from 'react'
-import List from './List'
+import HabitContainer from './List'
 
 export default {
-  title: 'Habit List',
-  component: List,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  title: 'List',
+  component: HabitContainer,
 }
 
-const Template = (args) => <List {...args} />
+const Template = (args) => <HabitContainer {...args} />
 
 export const ListItem = Template.bind({})
+
+ListItem.args = {
+  primary: true,
+}

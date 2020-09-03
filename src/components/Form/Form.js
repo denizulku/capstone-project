@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import List from '../List/List'
+import PropTypes from 'prop-types'
 
 export default function Form({ habits, onSubmit }) {
   return (
     <>
       <Container onSubmit={handleSubmit}>
-        <Input name="habit" type="text" placeholder="Insert a habit" />
+        <InputStyled name="habit" type="text" placeholder="Insert a habit" />
       </Container>
     </>
   )
@@ -25,7 +25,7 @@ const Container = styled.form`
   display: flex;
   justify-content: center;
 `
-const Input = styled.input`
+const InputStyled = styled.input`
   width: 300px;
   height: 30px;
 `
