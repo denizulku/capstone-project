@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-export default function Form({ habits, onSubmit }) {
+export default function Form({ onSubmit }) {
   return (
     <>
       <FormContainer onSubmit={handleSubmit}>
@@ -15,7 +15,11 @@ export default function Form({ habits, onSubmit }) {
     e.preventDefault()
     const form = e.target
     const input = form.habit
-    onSubmit(input.value)
+    if (input.value === ' ') {
+      return alert('Please add a new habit')
+    } else {
+      onSubmit(input.value)
+    }
     form.reset()
   }
 }
