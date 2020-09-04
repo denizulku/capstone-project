@@ -15,7 +15,7 @@ export default function Form({ onSubmit }) {
     e.preventDefault()
     const form = e.target
     const input = form.habit
-    if (input.value === ' ') {
+    if (input.value === '') {
       return alert('Please add a new habit')
     } else {
       onSubmit(input.value)
