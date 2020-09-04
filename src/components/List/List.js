@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 import Habit from '../Habit/HabitItem'
 
-export default function List({ habits, item }) {
+export default function List({ habits }) {
   return (
     <HabitList>
-      {habits.map((habit) => (
+      {habits.map((habit, item) => (
         <div key={item}>
           <HabitContainer>
             <Habit text={habit} />
