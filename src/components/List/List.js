@@ -3,13 +3,18 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 import Habit from '../Habit/HabitItem'
 
-export default function List({ habits }) {
+export default function List({ habits, onItemClick }) {
   return (
     <HabitList>
-      {habits.map((habit, item) => (
-        <div key={item}>
+      {habits.map((habit) => (
+        <div key={habit.id}>
           <HabitContainer>
-            <Habit text={habit} />
+            <Habit
+              id={habit.id}
+              name={habit.name}
+              completed={habit.completed}
+              onItemClick={onItemClick}
+            />
           </HabitContainer>
         </div>
       ))}
