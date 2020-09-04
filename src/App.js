@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
 import Form from './components/Form/Form'
 import List from './components/List/List'
 import { v4 as uuid } from 'uuid'

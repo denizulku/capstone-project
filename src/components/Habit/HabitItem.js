@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 export default function Habit({ name, completed, id, onItemClick }) {
   return (
