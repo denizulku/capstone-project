@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Form habits={habits} onSubmit={addHabit} />
       <List
-        display={displayToday}
+        displayToday={displayToday}
         habits={habits}
         onItemClick={toggleCompleted}
       />
@@ -18,8 +18,27 @@ function App() {
 
   function displayToday() {
     const today = new Date()
+    const months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ]
     const date =
-      today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear()
+      today.getDate() +
+      ' ' +
+      months[today.getMonth()] +
+      ' ' +
+      today.getFullYear()
+    return date
   }
   function addHabit(name) {
     setHabits([...habits, { name, completed: false, id: uuid() }])

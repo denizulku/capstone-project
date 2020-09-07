@@ -5,7 +5,7 @@ import Habit from '../Habit/HabitItem'
 export default function List({ habits, onItemClick, displayToday }) {
   return (
     <>
-      <CurrentDate>{displayToday}</CurrentDate>
+      <CurrentDate>{displayToday()}</CurrentDate>
       <HabitList>
         {habits.map((habit) => (
           <div key={habit.id}>
@@ -26,7 +26,7 @@ export default function List({ habits, onItemClick, displayToday }) {
 
 const CurrentDate = styled.div`
   display: flex;
-  text-align: center;
+  justify-content: center;
 `
 
 const HabitList = styled.section`
