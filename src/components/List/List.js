@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import Habit from '../Habit/Habit'
+import { displayToday } from '../../util'
 
-export default function List({ habits, onItemClick, displayToday }) {
+export default function List({ habits, onItemClick }) {
   return (
     <>
       <CurrentDate>{displayToday()}</CurrentDate>
