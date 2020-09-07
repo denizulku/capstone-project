@@ -23,8 +23,7 @@ export default function List({ habits, onItemClick, displayToday }) {
 
 const CurrentDate = styled.div`
   margin-top: 20px;
-  display: flex;
-  justify-content: center;
+  text-align: center;
 `
 
 const HabitList = styled.section`
