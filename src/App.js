@@ -40,6 +40,7 @@ function App() {
       today.getFullYear()
     return date
   }
+
   function addHabit(name) {
     setHabits([...habits, { name, completed: false, id: uuid() }])
   }
