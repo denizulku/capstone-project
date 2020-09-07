@@ -44,7 +44,6 @@
     "@storybook/preset-create-react-app": "^3.1.4",
     "@storybook/react": "^6.0.20",
     "babel-loader": "^8.1.0",
-    "jest": "^26.4.2",
     "jest-date-mock": "^1.0.8",
     "react-is": "^16.13.1"
   }
