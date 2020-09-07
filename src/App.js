@@ -8,10 +8,19 @@ function App() {
   return (
     <div className="App">
       <Form habits={habits} onSubmit={addHabit} />
-      <List habits={habits} onItemClick={toggleCompleted} />
+      <List
+        display={displayToday}
+        habits={habits}
+        onItemClick={toggleCompleted}
+      />
     </div>
   )
 
+  function displayToday() {
+    const today = new Date()
+    const date =
+      today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear()
+  }
   function addHabit(name) {
     setHabits([...habits, { name, completed: false, id: uuid() }])
   }
