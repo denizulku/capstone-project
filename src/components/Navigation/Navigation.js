@@ -1,6 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
+import IconHome from './components/assets/icons/IconHome.svg'
+import IconPlus from './components/assets/icons/IconPlus.svg'
+import IconMonthlyOverview from '.components/assets/icons/IconMonthlyOverview.svg'
 
 export default function Navigation() {
   return (
