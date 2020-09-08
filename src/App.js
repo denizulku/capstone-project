@@ -1,14 +1,19 @@
 import React, { useState } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Form from './components/Form/Form'
 import List from './components/List/List'
+import Navigation from './Navigation'
 import { v4 as uuid } from 'uuid'
 
 function App() {
   const [habits, setHabits] = useState([])
   return (
     <div className="App">
-      <Form habits={habits} onSubmit={addHabit} />
-      <List habits={habits} onItemClick={toggleCompleted} />
+      <Router>
+        <Form habits={habits} onSubmit={addHabit} />
+        <List habits={habits} onItemClick={toggleCompleted} />
+        <Navigation />
+      </Router>
     </div>
   )
 
