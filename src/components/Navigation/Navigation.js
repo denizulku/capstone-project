@@ -12,7 +12,7 @@ export default function Navigation() {
         <img src={IconHome} alt="Home" />
       </NavLink>
       <NavLink to="#">
-        <img src={IconPlus} alt="Create" />
+        <AddIcon src={IconPlus} alt="Create" />
       </NavLink>
       <NavLink to="#">
         <img src={IconMonthlyOverview} alt="Monthly Overview" />
@@ -30,11 +30,12 @@ const Navbar = styled.div`
   position: fixed;
   bottom: 0px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   background: #bcbbbc;
-  a {
-    color: white;
-    text-decoration: none;
-  }
+`
+
+const AddIcon = styled.img`
+  position: relative;
+  bottom: 30px;
 `
