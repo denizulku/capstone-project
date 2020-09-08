@@ -1,18 +1,22 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import IconHome from './components/assets/icons/IconHome.svg'
-import IconPlus from './components/assets/icons/IconPlus.svg'
-import IconMonthlyOverview from '.components/assets/icons/IconMonthlyOverview.svg'
+import IconHome from '../../components/assets/icons/IconHome.svg'
+import IconPlus from '../../components/assets/icons/IconPlus.svg'
+import IconMonthlyOverview from '../../components/assets/icons/IconMonthlyOverview.svg'
 
 export default function Navigation() {
   return (
     <Navbar>
       <NavLink exact to="/">
-        Home
+        <img src={IconHome} alt="Home" />
       </NavLink>
-      <NavLink to="#">+</NavLink>
-      <NavLink to="#">Calendar</NavLink>
+      <NavLink to="#">
+        <img src={IconPlus} alt="Create" />
+      </NavLink>
+      <NavLink to="#">
+        <img src={IconMonthlyOverview} alt="Monthly Overview" />
+      </NavLink>
     </Navbar>
   )
 }
