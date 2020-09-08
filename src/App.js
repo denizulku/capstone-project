@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Form from './components/Form/Form'
 import List from './components/List/List'
+import DayPicker from './components/Calendar/Calendar'
 import { v4 as uuid } from 'uuid'
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <div className="App">
       <Form habits={habits} onSubmit={addHabit} />
       <List habits={habits} onItemClick={toggleCompleted} />
+      <DayPicker />
     </div>
   )
 
