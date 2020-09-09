@@ -8,13 +8,13 @@ import IconMonthlyOverview from '../../components/assets/icons/IconMonthlyOvervi
 export default function Navigation() {
   return (
     <Navbar>
-      <NavLink exact to="/">
+      <NavLink exact to="/Home">
         <img src={IconHome} alt="Home" />
       </NavLink>
-      <NavLink to="#">
+      <NavLink to="/Create">
         <AddIcon src={IconPlus} alt="Create" />
       </NavLink>
-      <NavLink to="#">
+      <NavLink to="/Overview">
         <img src={IconMonthlyOverview} alt="Monthly Overview" />
       </NavLink>
     </Navbar>

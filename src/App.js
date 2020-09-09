@@ -3,18 +3,30 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Form from './components/Form/Form'
 import List from './components/List/List'
 import Navigation from './components/Navigation/Navigation'
+import Home from './components/Sites/Home'
+import MonthlyOverview from './components/Sites/Overview'
 import { v4 as uuid } from 'uuid'
 
 function App() {
   const [habits, setHabits] = useState([])
   return (
-    <div className="App">
-      <Router>
-        <Form habits={habits} onSubmit={addHabit} />
-        <List habits={habits} onItemClick={toggleCompleted} />
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/Home">
+            <h2>Welcome!</h2>
+          </Route>
+          <Route path="/create">
+            <Form habits={habits} onSubmit={addHabit} />
+            <List habits={habits} onItemClick={toggleCompleted} />
+          </Route>
+          <Route path="/overview">
+            <h2>Calendar</h2>
+          </Route>
+        </Switch>
         <Navigation />
-      </Router>
-    </div>
+      </div>
+    </Router>
   )
 
   function addHabit(name) {
