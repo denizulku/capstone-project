@@ -35,7 +35,7 @@ const NavigationStyled = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background: --navgrey;
+  background: #bcbbbc;
 `
 
 const AddIcon = styled.img`
