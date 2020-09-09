@@ -9,13 +9,16 @@ export default function Navigation() {
   return (
     <NavigationStyled>
       <NavLink exact to="/">
-        <img src={IconHome} alt="Home" />
+        <img src={IconHome} alt="Go to Dashboard page" />
       </NavLink>
       <NavLink to="/Create">
-        <AddIcon src={IconPlus} alt="Create" />
+        <AddIcon src={IconPlus} alt="Create a habit" />
       </NavLink>
       <NavLink to="/Overview">
-        <img src={IconMonthlyOverview} alt="Monthly Overview" />
+        <img
+          src={IconMonthlyOverview}
+          alt="Get a monthly overview of your habits"
+        />
       </NavLink>
     </NavigationStyled>
   )
@@ -28,11 +31,11 @@ const NavigationStyled = styled.div`
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   position: fixed;
-  bottom: 0px;
+  bottom: 0;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background: #bcbbbc;
+  background: --navgrey;
 `
 
 const AddIcon = styled.img`
