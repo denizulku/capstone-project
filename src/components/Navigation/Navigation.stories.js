@@ -9,7 +9,3 @@ export default {
 const Template = (args) => <Navigation {...args} />
 
 export const Primary = Template.bind({})
-
-Primary.args = {}
-
-Primary.argTypes = { onClick: { action: 'checkHabit' } }

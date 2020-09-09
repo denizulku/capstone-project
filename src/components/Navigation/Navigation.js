@@ -7,8 +7,8 @@ import IconMonthlyOverview from '../../components/assets/icons/IconMonthlyOvervi
 
 export default function Navigation() {
   return (
-    <Navbar>
-      <NavLink exact to="/Home">
+    <NavigationStyled>
+      <NavLink exact to="/">
         <img src={IconHome} alt="Home" />
       </NavLink>
       <NavLink to="/Create">
@@ -17,11 +17,11 @@ export default function Navigation() {
       <NavLink to="/Overview">
         <img src={IconMonthlyOverview} alt="Monthly Overview" />
       </NavLink>
-    </Navbar>
+    </NavigationStyled>
   )
 }
 
-const Navbar = styled.div`
+const NavigationStyled = styled.div`
   font-size: 100%;
   height: 64px;
   width: 100%;
