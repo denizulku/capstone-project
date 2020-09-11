@@ -29,6 +29,7 @@ const CurrentDate = styled.div`
 
 const HabitList = styled.section`
   margin-top: 20px;
+  margin-bottom: 150px;
   position: relative;
   text-align: center;
 `

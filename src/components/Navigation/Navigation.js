@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import IconHome from '../../components/assets/icons/IconHome.svg'
-import IconPlus from '../../components/assets/icons/IconPlus.svg'
+import IconAdd from '../../components/assets/icons/IconAdd.svg'
 import IconMonthlyOverview from '../../components/assets/icons/IconMonthlyOverview.svg'
 
 export default function Navigation() {
@@ -12,7 +12,7 @@ export default function Navigation() {
         <img src={IconHome} alt="Go to Dashboard page" />
       </NavLink>
       <NavLink to="/Create">
-        <AddIcon src={IconPlus} alt="Create a habit" />
+        <AddIcon src={IconAdd} alt="Create a habit" />
       </NavLink>
       <NavLink to="/Overview">
         <img
@@ -39,6 +39,8 @@ const NavigationStyled = styled.div`
 `
 
 const AddIcon = styled.img`
+  z-index: 100;
   position: relative;
   bottom: 30px;
+  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.3));
 `
