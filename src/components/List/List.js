@@ -3,7 +3,7 @@ import styled from 'styled-components/macro'
 import Habit from '../Habit/Habit'
 import { displayToday } from '../../util'
 
-export default function List({ habits, onItemClick }) {
+export default function List({ habits, onItemClick, options }) {
   return (
     <>
       <CurrentDate>{displayToday()}</CurrentDate>
@@ -15,6 +15,7 @@ export default function List({ habits, onItemClick }) {
             name={habit.name}
             completed={habit.completed}
             onItemClick={onItemClick}
+            options={options}
           />
         ))}
       </HabitList>
