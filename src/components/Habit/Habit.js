@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function Habit({ name, completed, id, onItemClick }) {
+export default function Habit({ name, completed, id, onItemClick, color }) {
   return (
     <HabitItem className="Habit">
       {name}
@@ -9,6 +9,7 @@ export default function Habit({ name, completed, id, onItemClick }) {
         onChange={() => onItemClick(id)}
         checked={completed}
         type="checkbox"
+        color={color}
       />
     </HabitItem>
   )

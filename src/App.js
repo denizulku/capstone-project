@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Form from './components/Form/Form'
 import List from './components/List/List'
 import Navigation from './components/Navigation/Navigation'
-import Home from './components/Sites/Home'
-import MonthlyOverview from './components/Sites/Overview'
 import { v4 as uuid } from 'uuid'
 
 function App() {

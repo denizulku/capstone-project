@@ -1,8 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, Component } from 'react'
 import styled from 'styled-components'
+import Select from 'react-select'
 
 export default function Form({ onSubmit }) {
   const [habitInput, setHabitInput] = useState('')
+  // const [habitColor, setHabitColor] = useState()
+  const options = [
+    { value: 'orange', label: 'Orange' },
+    { value: 'yellow', label: 'Yellow' },
+    { value: 'purple', label: 'Purple' },
+  ]
   return (
     <>
       <FormContainer onSubmit={handleSubmit}>
@@ -15,6 +22,7 @@ export default function Form({ onSubmit }) {
         />
         <AddButton type="submit">Add habit</AddButton>
       </FormContainer>
+      <Select options={options} />
     </>
   )
 
@@ -33,9 +41,10 @@ const FormContainer = styled.form`
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
 `
 const InputStyled = styled.input`
-  width: 300px;
+  width: 250px;
   height: 30px;
 `
 
