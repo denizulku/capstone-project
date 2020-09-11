@@ -14,11 +14,11 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/">
-            <h2>Welcome!</h2>
+            <p>Click '+' to create a new habit</p>
+            <List habits={habits} onItemClick={toggleCompleted} />
           </Route>
           <Route path="/create">
             <Form habits={habits} onSubmit={addHabit} />
-            <List habits={habits} onItemClick={toggleCompleted} />
           </Route>
           <Route path="/overview">
             <h2>Calendar</h2>
