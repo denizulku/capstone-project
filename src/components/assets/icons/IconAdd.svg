@@ -1,0 +1,11 @@
+<svg id="Komponente_9_2" data-name="Komponente 9 – 2" xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+
+  <g id="Komponente_8_1" data-name="Komponente 8 – 1">
+    <circle id="Ellipse_1" data-name="Ellipse 1" cx="48" cy="48" r="48" fill="#fff"/>
+  
+    <g id="Icon_feather-plus" data-name="Icon feather-plus" transform="translate(16.5 16.5)">
+      <path id="Pfad_1" data-name="Pfad 1" d="M18,7.5v48" transform="translate(13.5 0)" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path id="Pfad_2" data-name="Pfad 2" d="M7.5,18h48" transform="translate(0 13.5)" fill="#888" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    </g>
+  </g>
+</svg>
