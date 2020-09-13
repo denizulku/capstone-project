@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import Select from 'react-select'
 
 const colorOptions = [
   { value: '#FFC179', label: 'Orange' },
@@ -10,7 +9,7 @@ const colorOptions = [
 
 export default function Form({ onSubmit }) {
   const [habitInput, setHabitInput] = useState('')
-  const [selectedOption, setSelectedOption] = useState(null)
+
   return (
     <>
       <FormContainer onSubmit={handleSubmit}>
@@ -20,13 +19,10 @@ export default function Form({ onSubmit }) {
           name="habit"
           type="text"
           placeholder="Insert a habit"
-          onSelect={(e) => setSelectedOption(e.target.value)}
         />
-        <Select
-          defaultValue={selectedOption}
-          onChange={setSelectedOption}
-          options={colorOptions}
-        />
+        {colorOptions.map((color) => (
+          <div>{color.label}</div>
+        ))}
         <AddButton type="submit">Add habit</AddButton>
       </FormContainer>
     </>
