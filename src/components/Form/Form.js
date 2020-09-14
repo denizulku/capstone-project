@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 export default function Form({ onSubmit }) {
   return (
@@ -24,7 +24,6 @@ export default function Form({ onSubmit }) {
 }
 
 const FormContainer = styled.form`
-  margin-top: 20px;
   display: flex;
   justify-content: center;
 `

@@ -28,7 +28,7 @@ export default function Calendar() {
 }
 
 const StyledCalendar = styled.div`
+  font-family: Roboto, sans-serif;
   display: flex;
   justify-content: center;
-  font-family: Roboto, sans-serif;
 `

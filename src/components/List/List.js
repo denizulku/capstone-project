@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import Habit from '../Habit/Habit'
 import { displayToday } from '../../util'
+import { v4 as uuid } from 'uuid'
 
 export default function List({ habits, onItemClick }) {
   return (
@@ -23,7 +24,6 @@ export default function List({ habits, onItemClick }) {
 }
 
 const CurrentDate = styled.div`
-  margin-top: 20px;
   text-align: center;
 `
 
