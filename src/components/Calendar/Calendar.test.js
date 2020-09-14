@@ -4,7 +4,7 @@ import React from 'react'
 import Calendar from './Calendar'
 
 it('renders without crashing', () => {
-  let props = {
+  const props = {
     currentDay: moment('2017-12-26').format('MMM Do YYYY a'),
   }
 
