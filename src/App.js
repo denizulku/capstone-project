@@ -11,7 +11,7 @@ import { v4 as uuid } from 'uuid'
 
 function App() {
   const [habits, setHabits] = useState([])
-  const [currentPage, setCurrentPage] = useState('Dashboard')
+  const [currentPage, setCurrentPage] = useState('')
   return (
     <Router>
       <div className="App">
