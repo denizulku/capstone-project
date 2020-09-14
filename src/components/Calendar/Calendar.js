@@ -30,5 +30,5 @@ export default function Calendar() {
 const StyledCalendar = styled.div`
   display: flex;
   justify-content: center;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
 `
