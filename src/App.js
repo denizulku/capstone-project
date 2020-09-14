@@ -4,15 +4,18 @@ import Form from './components/Form/Form'
 import List from './components/List/List'
 import Calendar from './components/Calendar/Calendar'
 import Navigation from './components/Navigation/Navigation'
+import Header from './components/Header/Header'
 import Home from './components/Sites/Home'
 import MonthlyOverview from './components/Sites/Overview'
 import { v4 as uuid } from 'uuid'
 
 function App() {
   const [habits, setHabits] = useState([])
+  const [currentPage, setCurrentPage] = useState('Dashboard')
   return (
     <Router>
       <div className="App">
+        <Header title={currentPage} />
         <Switch>
           <Route exact path="/">
             <h2>Welcome!</h2>
@@ -26,7 +29,7 @@ function App() {
             <Calendar />
           </Route>
         </Switch>
-        <Navigation />
+        <Navigation onNavigate={setCurrentPage} />
       </div>
     </Router>
   )
