@@ -11,7 +11,6 @@ export default function Header({ title }) {
   return (
     <StyledHeadline>
       <img src={HeaderLogo} alt="Logo for the App called Habits" />
-      {title}
     </StyledHeadline>
   )
 }

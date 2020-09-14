@@ -13,17 +13,19 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <Switch>
-          <Route exact path="/">
-            <List habits={habits} onItemClick={toggleCompleted} />
-          </Route>
-          <Route path="/create">
-            <Form habits={habits} onSubmit={addHabit} />
-          </Route>
-          <Route path="/overview">
-            <Calendar />
-          </Route>
-        </Switch>
+        <main>
+          <Switch>
+            <Route exact path="/">
+              <List habits={habits} onItemClick={toggleCompleted} />
+            </Route>
+            <Route path="/create">
+              <Form habits={habits} onSubmit={addHabit} />
+            </Route>
+            <Route path="/overview">
+              <Calendar />
+            </Route>
+          </Switch>
+        </main>
         <Navigation />
       </div>
     </Router>
