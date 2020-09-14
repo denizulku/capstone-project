@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Form from './components/Form/Form'
 import List from './components/List/List'
+import Calendar from './components/Calendar/Calendar'
 import Navigation from './components/Navigation/Navigation'
 import Home from './components/Sites/Home'
 import MonthlyOverview from './components/Sites/Overview'
@@ -21,7 +22,8 @@ function App() {
             <List habits={habits} onItemClick={toggleCompleted} />
           </Route>
           <Route path="/overview">
-            <h2>Calendar</h2>
+            <h2>Your monthly overview</h2>
+            <Calendar />
           </Route>
         </Switch>
         <Navigation />
