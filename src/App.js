@@ -27,8 +27,8 @@ function App() {
     </Router>
   )
 
-  function addHabit(name) {
-    setHabits([...habits, { name, completed: false, id: uuid() }])
+  function addHabit(name, color) {
+    setHabits([...habits, { name, completed: false, color: color, id: uuid() }])
   }
   function toggleCompleted(id) {
     const index = habits.findIndex((habit) => habit.id === id)

@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import ColorButton from '../ColorButton.js/ColorButton'
 
-const colorOptions = [
-  { value: '#FFC179', label: 'Orange' },
-  { value: '#FFFF93', label: 'Yellow' },
-  { value: '#B7AEFD', label: 'Purple' },
-]
+// const colorOptions = [
+//   { value: '#FFC179', label: 'Orange' },
+//   { value: '#FFFF93', label: 'Yellow' },
+//   { value: '#B7AEFD', label: 'Purple' },
+// ]
 
-export default function Form({ onSubmit }) {
+export default function Form({ onSubmit, selectColor }) {
   const [habitInput, setHabitInput] = useState('')
+  // const [colorInput, setColorInput] = useState('')
 
   return (
     <>
@@ -20,9 +22,7 @@ export default function Form({ onSubmit }) {
           type="text"
           placeholder="Insert a habit"
         />
-        {colorOptions.map((color) => (
-          <div>{color.label}</div>
-        ))}
+        <ColorButton selectColor={selectColor} />
         <AddButton type="submit">Add habit</AddButton>
       </FormContainer>
     </>
@@ -30,10 +30,11 @@ export default function Form({ onSubmit }) {
 
   function handleSubmit(event) {
     event.preventDefault()
-    if (habitInput === '') {
-      alert('Please add a new habit')
+
+    if (habitInput === '' || selectColor === '') {
+      alert('Please add a new habit and select color')
     } else {
-      onSubmit(habitInput)
+      onSubmit(habitInput, selectColor)
     }
     setHabitInput('')
   }

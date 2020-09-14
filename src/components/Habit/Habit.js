@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function Habit({ name, completed, id, onItemClick }) {
+export default function Habit({ name, completed, color, id, onItemClick }) {
   return (
     <HabitItem className="Habit">
       {name}
+      {color}
       <input
         onChange={() => onItemClick(id)}
         checked={completed}

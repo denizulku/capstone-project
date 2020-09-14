@@ -15,6 +15,7 @@ export default function List({ habits, onItemClick }) {
             name={habit.name}
             completed={habit.completed}
             onItemClick={onItemClick}
+            color={habit.color}
           />
         ))}
       </HabitList>
