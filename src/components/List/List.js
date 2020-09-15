@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components/macro'
 import Habit from '../Habit/Habit'
 import { displayToday } from '../../util'
-import { v4 as uuid } from 'uuid'
 
 export default function List({ habits, onItemClick }) {
   return (
