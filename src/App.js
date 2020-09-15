@@ -9,6 +9,7 @@ import { v4 as uuid } from 'uuid'
 
 function App() {
   const [habits, setHabits] = useState([])
+
   return (
     <Router>
       <div className="App">

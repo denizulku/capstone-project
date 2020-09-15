@@ -1,21 +1,18 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import HeaderLogo from '../../components/assets/Logo/HeaderLogo.svg'
 
-Header.propTypes = {
-  title: PropTypes.string,
-}
-
-export default function Header({ title }) {
+export default function Header() {
   return (
-    <StyledHeadline>
-      <img src={HeaderLogo} alt="Logo for the App called Habits" />
-    </StyledHeadline>
+    <>
+      <StyledHeader>
+        <img src={HeaderLogo} alt="Logo for the App Habits" />
+      </StyledHeader>
+    </>
   )
 }
 
-const StyledHeadline = styled.div`
+const StyledHeader = styled.div`
   top: 0;
   z-index: 100;
   position: fixed;
