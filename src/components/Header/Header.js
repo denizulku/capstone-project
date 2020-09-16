@@ -11,7 +11,7 @@ Header.defaultProps = {
   headline: 'Dashboard',
 }
 
-export default function Header({ headline }) {
+export default function Header() {
   return (
     <>
       <StyledHeader>

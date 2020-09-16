@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import Habit from '../Habit/Habit'
 import { displayToday } from '../../util'
-import Header from '../Header/Header'
 
 export default function List({ habits, onItemClick, headline }) {
   return (
