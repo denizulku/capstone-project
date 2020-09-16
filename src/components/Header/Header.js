@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components/macro'
 import HeaderLogo from '../../components/assets/Logo/HeaderLogo.svg'
 import PropTypes from 'prop-types'
