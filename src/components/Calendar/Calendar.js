@@ -5,7 +5,7 @@ import styled from 'styled-components/macro'
 
 const WEEKDAYS_SHORT = ['S', 'M', 'T', 'W', 'T', 'F', 'S']
 
-export default function Calendar() {
+export default function Calendar({ headline }) {
   const modifiers = {
     sundays: { daysOfWeek: [0] },
   }
@@ -16,14 +16,17 @@ export default function Calendar() {
     },
   }
   return (
-    <StyledCalendar>
-      <DayPicker
-        weekdaysShort={WEEKDAYS_SHORT}
-        firstDayOfWeek={1}
-        modifiers={modifiers}
-        modifiersStyles={modifiersStyles}
-      />
-    </StyledCalendar>
+    <>
+      <h2>{headline}</h2>
+      <StyledCalendar>
+        <DayPicker
+          weekdaysShort={WEEKDAYS_SHORT}
+          firstDayOfWeek={1}
+          modifiers={modifiers}
+          modifiersStyles={modifiersStyles}
+        />
+      </StyledCalendar>
+    </>
   )
 }
 

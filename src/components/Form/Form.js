@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function Form({ onSubmit }) {
+export default function Form({ onSubmit, headline }) {
   return (
     <>
+      <h2>{headline}</h2>
       <FormStyled onSubmit={handleSubmit}>
         <InputStyled name="habit" type="text" placeholder="Insert a habit" />
       </FormStyled>

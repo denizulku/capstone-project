@@ -16,7 +16,6 @@ export default function Header({ headline }) {
     <>
       <StyledHeader>
         <img src={HeaderLogo} alt="Logo for the App Habits" />
-        <StyledSubline>{headline}</StyledSubline>
       </StyledHeader>
     </>
   )
@@ -28,12 +27,5 @@ const StyledHeader = styled.header`
   align-items: center;
   background-color: #ffffff;
   width: 100%;
-  height: 80px;
-`
-
-const StyledSubline = styled.div`
-  margin-top: 10px;
-  font-size: 16px;
-  position: relative;
-  text-align: center;
+  height: 60px;
 `
