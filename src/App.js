@@ -12,31 +12,29 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
-        <Header />
-        <main>
-          <Switch>
-            <Route exact path="/">
-              <List
-                habits={habits}
-                onItemClick={toggleCompleted}
-                headline={'Dashboard'}
-              />
-            </Route>
-            <Route path="/create">
-              <Form
-                habits={habits}
-                onSubmit={addHabit}
-                headline={'Create a habit'}
-              />
-            </Route>
-            <Route path="/overview">
-              <Calendar headline={'Your monthly overview'} />
-            </Route>
-          </Switch>
-        </main>
-        <Navigation />
-      </div>
+      <Header />
+      <main>
+        <Switch>
+          <Route exact path="/">
+            <List
+              habits={habits}
+              onItemClick={toggleCompleted}
+              headline={'Dashboard'}
+            />
+          </Route>
+          <Route path="/create">
+            <Form
+              habits={habits}
+              onSubmit={addHabit}
+              headline={'Create a habit'}
+            />
+          </Route>
+          <Route path="/overview">
+            <Calendar headline={'Your monthly overview'} />
+          </Route>
+        </Switch>
+      </main>
+      <Navigation />
     </Router>
   )
   function addHabit(name) {

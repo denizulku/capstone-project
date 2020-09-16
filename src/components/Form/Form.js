@@ -4,9 +4,9 @@ import styled from 'styled-components/macro'
 export default function Form({ onSubmit }) {
   return (
     <>
-      <FormContainer onSubmit={handleSubmit}>
+      <FormStyled onSubmit={handleSubmit}>
         <InputStyled name="habit" type="text" placeholder="Insert a habit" />
-      </FormContainer>
+      </FormStyled>
     </>
   )
 
@@ -23,7 +23,7 @@ export default function Form({ onSubmit }) {
   }
 }
 
-const FormContainer = styled.form`
+const FormStyled = styled.form`
   display: flex;
   justify-content: center;
 `

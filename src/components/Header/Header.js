@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import HeaderLogo from '../../components/assets/Logo/HeaderLogo.svg'
 import PropTypes from 'prop-types'
 
@@ -23,10 +23,7 @@ export default function Header({ headline }) {
 }
 
 const StyledHeader = styled.header`
-  top: 0;
   padding-top: 20px;
-  z-index: 100;
-  position: fixed;
   text-align: center;
   align-items: center;
   background-color: #ffffff;

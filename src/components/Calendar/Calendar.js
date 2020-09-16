@@ -27,7 +27,7 @@ export default function Calendar() {
   )
 }
 
-const StyledCalendar = styled.div`
+const StyledCalendar = styled.section`
   font-family: Roboto, sans-serif;
   display: flex;
   justify-content: center;

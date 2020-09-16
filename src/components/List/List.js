@@ -27,7 +27,8 @@ const CurrentDate = styled.div`
   text-align: center;
 `
 
-const HabitList = styled.section`
+const HabitList = styled.li`
+  list-style: none;
   margin-top: 20px;
   margin-bottom: 150px;
   position: relative;
