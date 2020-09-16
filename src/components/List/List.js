@@ -6,6 +6,7 @@ import { displayToday } from '../../util'
 export default function List({ habits, onItemClick }) {
   return (
     <>
+      <p>Click '+' to create a new habit</p>
       <CurrentDate>{displayToday()}</CurrentDate>
       <HabitList>
         {habits.map((habit) => (

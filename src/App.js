@@ -17,13 +17,21 @@ function App() {
         <main>
           <Switch>
             <Route exact path="/">
-              <List habits={habits} onItemClick={toggleCompleted} />
+              <List
+                habits={habits}
+                onItemClick={toggleCompleted}
+                headline={'Dashboard'}
+              />
             </Route>
             <Route path="/create">
-              <Form habits={habits} onSubmit={addHabit} />
+              <Form
+                habits={habits}
+                onSubmit={addHabit}
+                headline={'Create a habit'}
+              />
             </Route>
             <Route path="/overview">
-              <Calendar />
+              <Calendar headline={'Your monthly overview'} />
             </Route>
           </Switch>
         </main>
