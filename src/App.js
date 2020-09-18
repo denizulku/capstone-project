@@ -2,33 +2,43 @@ import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Form from './components/Form/Form'
 import List from './components/List/List'
+import Calendar from './components/Calendar/Calendar'
 import Navigation from './components/Navigation/Navigation'
+import Header from './components/Header/Header'
 import { v4 as uuid } from 'uuid'
 
 function App() {
   const [habits, setHabits] = useState([])
+
   return (
     <Router>
-      <div className="App">
+      <Header />
+      <main>
         <Switch>
           <Route exact path="/">
-            <p>Click '+' to create a new habit</p>
-            <List habits={habits} onItemClick={toggleCompleted} />
+            <List
+              habits={habits}
+              onItemClick={toggleCompleted}
+              headline={'Dashboard'}
+            />
           </Route>
           <Route path="/create">
-            <Form habits={habits} onSubmit={addHabit} />
+            <Form
+              habits={habits}
+              onSubmit={addHabit}
+              headline={'Create a habit'}
+            />
           </Route>
           <Route path="/overview">
-            <h2>Calendar</h2>
+            <Calendar headline={'Your monthly overview'} />
           </Route>
         </Switch>
-        <Navigation />
-      </div>
+      </main>
+      <Navigation />
     </Router>
   )
-
-  function addHabit(name, color) {
-    setHabits([...habits, { name, completed: false, color: color, id: uuid() }])
+  function addHabit(name) {
+    setHabits([...habits, { name, completed: false, id: uuid() }])
   }
   function toggleCompleted(id) {
     const index = habits.findIndex((habit) => habit.id === id)

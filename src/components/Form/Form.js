@@ -8,13 +8,14 @@ import ColorButton from '../ColorButton.js/ColorButton'
 //   { value: '#B7AEFD', label: 'Purple' },
 // ]
 
-export default function Form({ onSubmit }) {
+export default function Form({ onSubmit, headline }) {
   const [habitInput, setHabitInput] = useState('')
   // const [colorInput, setColorInput] = useState('')
 
   return (
     <>
-      <FormContainer onSubmit={handleSubmit}>
+      <h2>{headline}</h2>
+      <FormStyled onSubmit={handleSubmit}>
         <InputStyled
           value={habitInput}
           onChange={(e) => setHabitInput(e.target.value)}
@@ -23,7 +24,7 @@ export default function Form({ onSubmit }) {
           placeholder="Insert a habit"
         />
         <AddButton type="submit">Add habit</AddButton>
-      </FormContainer>
+      </FormStyled>
     </>
   )
 
@@ -39,9 +40,9 @@ export default function Form({ onSubmit }) {
   }
 }
 
-const FormContainer = styled.form`
-  margin-top: 20px;
-  align-items: center;
+const FormStyled = styled.form`
+  display: flex;
+  justify-content: center;
 `
 const InputStyled = styled.input`
   width: 250px;
