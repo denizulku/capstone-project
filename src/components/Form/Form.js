@@ -1,20 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { GithubPicker } from 'react-color'
-import InputColor from 'react-input-color'
-import ColorButton from '../ColorButton.js/ColorButton'
-
-// const colorOptions = [
-//   { value: '#FFC179', label: 'Orange' },
-//   { value: '#FFFF93', label: 'Yellow' },
-//   { value: '#B7AEFD', label: 'Purple' },
-// ]
+import { CirclePicker } from 'react-color'
 
 export default function Form({ onSubmit, headline }) {
   const [habitInput, setHabitInput] = useState('')
   const [categoryInput, setCategoryInput] = useState('')
-  const [color, setColor] = React.useState({})
-  // const [colorInput, setColorInput] = useState('')
 
   return (
     <>
@@ -43,7 +33,9 @@ export default function Form({ onSubmit, headline }) {
           <option value="Hobby">Hobby</option>
           <option value="Misc">Misc</option>
         </SelectStyled>
-        <GithubPicker />
+        <ColorInputStyled>
+          <CirclePicker />
+        </ColorInputStyled>
         <AddButton type="submit">Add habit</AddButton>
       </FormStyled>
     </>
@@ -73,7 +65,9 @@ const InputStyled = styled.input`
 
 const AddButton = styled.button`
   margin-top: 30px;
-  background: hotpink;
+  color: white;
+  font-weight: bold;
+  background: #b7aefd;
   height: 20px;
   border-radius: 3px;
   border: 10px;
@@ -87,8 +81,12 @@ const SelectStyled = styled.select`
   -webkit-appearance: none;
   appearance: none;
   width: 250px;
+  height: 30px;
 `
 
 const ColorInputStyled = styled.section`
   margin-top: 10px;
+  position: relative;
+  align-items: center;
+  text-align: center;
 `
