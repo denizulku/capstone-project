@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import InputColor from 'react-input-color'
 import ColorButton from '../ColorButton.js/ColorButton'
 
 // const colorOptions = [
@@ -11,6 +12,7 @@ import ColorButton from '../ColorButton.js/ColorButton'
 export default function Form({ onSubmit, headline }) {
   const [habitInput, setHabitInput] = useState('')
   const [categoryInput, setCategoryInput] = useState('')
+  const [color, setColor] = React.useState({})
   // const [colorInput, setColorInput] = useState('')
 
   return (
@@ -27,13 +29,23 @@ export default function Form({ onSubmit, headline }) {
         <SelectStyled
           value={categoryInput}
           onChange={(e) => setCategoryInput(e.target.value)}
+          name="category"
         >
+          <option>Choose a category</option>
           <option value="Morning routine">Morning routine</option>
           <option value="Nighttime routine">Nighttime routine</option>
           <option value="Fitness">Fitness</option>
           <option value="Health">Health</option>
           <option value="Social">Social</option>
+          <option value="Misc">Misc</option>
         </SelectStyled>
+
+        <InputColor
+          initialValue="#5e72e4"
+          onChange={setColor}
+          placement="right"
+        />
+
         <AddButton type="submit">Add habit</AddButton>
       </FormStyled>
     </>
@@ -53,8 +65,8 @@ export default function Form({ onSubmit, headline }) {
 }
 
 const FormStyled = styled.form`
-  display: flex;
-  justify-content: center;
+  align-items: center;
+  text-align: center;
 `
 const InputStyled = styled.input`
   width: 250px;
@@ -66,13 +78,13 @@ const AddButton = styled.button`
   height: 20px;
   border-radius: 3px;
   border: 10px;
-`
-const SelectStyled = styled.select`
-  cursor: pointer;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  border-radius: 5px;
   width: 250px;
   height: 30px;
+`
+const SelectStyled = styled.select`
+  position: relative;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 250px;
 `
