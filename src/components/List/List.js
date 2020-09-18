@@ -3,9 +3,11 @@ import styled from 'styled-components/macro'
 import Habit from '../Habit/Habit'
 import { displayToday } from '../../util'
 
-export default function List({ habits, onItemClick }) {
+export default function List({ habits, onItemClick, headline }) {
   return (
     <>
+      <h2>{headline}</h2>
+      <p>Click '+' to create a new habit</p>
       <CurrentDate>{displayToday()}</CurrentDate>
       <HabitList>
         {habits.map((habit) => (
@@ -23,11 +25,11 @@ export default function List({ habits, onItemClick }) {
 }
 
 const CurrentDate = styled.div`
-  margin-top: 20px;
   text-align: center;
 `
 
-const HabitList = styled.section`
+const HabitList = styled.li`
+  list-style: none;
   margin-top: 20px;
   margin-bottom: 150px;
   position: relative;

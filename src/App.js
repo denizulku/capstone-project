@@ -4,33 +4,39 @@ import Form from './components/Form/Form'
 import List from './components/List/List'
 import Calendar from './components/Calendar/Calendar'
 import Navigation from './components/Navigation/Navigation'
-import Home from './components/Sites/Home'
-import MonthlyOverview from './components/Sites/Overview'
+import Header from './components/Header/Header'
 import { v4 as uuid } from 'uuid'
 
 function App() {
   const [habits, setHabits] = useState([])
+
   return (
     <Router>
-      <div className="App">
+      <Header />
+      <main>
         <Switch>
           <Route exact path="/">
-            <h2>Welcome!</h2>
+            <List
+              habits={habits}
+              onItemClick={toggleCompleted}
+              headline={'Dashboard'}
+            />
           </Route>
           <Route path="/create">
-            <Form habits={habits} onSubmit={addHabit} />
-            <List habits={habits} onItemClick={toggleCompleted} />
+            <Form
+              habits={habits}
+              onSubmit={addHabit}
+              headline={'Create a habit'}
+            />
           </Route>
           <Route path="/overview">
-            <h2>Your monthly overview</h2>
-            <Calendar />
+            <Calendar headline={'Your monthly overview'} />
           </Route>
         </Switch>
-        <Navigation />
-      </div>
+      </main>
+      <Navigation />
     </Router>
   )
-
   function addHabit(name) {
     setHabits([...habits, { name, completed: false, id: uuid() }])
   }

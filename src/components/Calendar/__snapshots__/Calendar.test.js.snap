@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="Calendar__StyledCalendar-sc-1e9ibe3-0 cZGaZl"
+  className="Calendar__StyledCalendar-sc-1e9ibe3-0 bWvkhB"
 >
   <div
     className="DayPicker DayPicker--interactionDisabled"

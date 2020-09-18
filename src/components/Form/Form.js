@@ -1,12 +1,13 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
-export default function Form({ onSubmit }) {
+export default function Form({ onSubmit, headline }) {
   return (
     <>
-      <FormContainer onSubmit={handleSubmit}>
+      <h2>{headline}</h2>
+      <FormStyled onSubmit={handleSubmit}>
         <InputStyled name="habit" type="text" placeholder="Insert a habit" />
-      </FormContainer>
+      </FormStyled>
     </>
   )
 
@@ -23,8 +24,7 @@ export default function Form({ onSubmit }) {
   }
 }
 
-const FormContainer = styled.form`
-  margin-top: 20px;
+const FormStyled = styled.form`
   display: flex;
   justify-content: center;
 `
