@@ -10,6 +10,7 @@ import ColorButton from '../ColorButton.js/ColorButton'
 
 export default function Form({ onSubmit, headline }) {
   const [habitInput, setHabitInput] = useState('')
+  const [categoryInput, setCategoryInput] = useState('')
   // const [colorInput, setColorInput] = useState('')
 
   return (
@@ -23,6 +24,16 @@ export default function Form({ onSubmit, headline }) {
           type="text"
           placeholder="Insert a habit"
         />
+        <SelectStyled
+          value={categoryInput}
+          onChange={(e) => setCategoryInput(e.target.value)}
+        >
+          <option value="Morning routine">Morning routine</option>
+          <option value="Nighttime routine">Nighttime routine</option>
+          <option value="Fitness">Fitness</option>
+          <option value="Health">Health</option>
+          <option value="Social">Social</option>
+        </SelectStyled>
         <AddButton type="submit">Add habit</AddButton>
       </FormStyled>
     </>
@@ -37,6 +48,7 @@ export default function Form({ onSubmit, headline }) {
       onSubmit(habitInput)
     }
     setHabitInput('')
+    setCategoryInput('')
   }
 }
 
@@ -52,6 +64,15 @@ const InputStyled = styled.input`
 const AddButton = styled.button`
   background: hotpink;
   height: 20px;
-  border-radius: 5px;
+  border-radius: 3px;
   border: 10px;
+`
+const SelectStyled = styled.select`
+  cursor: pointer;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 5px;
+  width: 250px;
+  height: 30px;
 `
