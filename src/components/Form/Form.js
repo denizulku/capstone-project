@@ -8,7 +8,7 @@ import ColorButton from '../ColorButton.js/ColorButton'
 //   { value: '#B7AEFD', label: 'Purple' },
 // ]
 
-export default function Form({ onSubmit, selectColor }) {
+export default function Form({ onSubmit }) {
   const [habitInput, setHabitInput] = useState('')
   // const [colorInput, setColorInput] = useState('')
 
@@ -22,7 +22,6 @@ export default function Form({ onSubmit, selectColor }) {
           type="text"
           placeholder="Insert a habit"
         />
-        <ColorButton selectColor={selectColor} />
         <AddButton type="submit">Add habit</AddButton>
       </FormContainer>
     </>
@@ -31,10 +30,10 @@ export default function Form({ onSubmit, selectColor }) {
   function handleSubmit(event) {
     event.preventDefault()
 
-    if (habitInput === '' || selectColor === '') {
+    if (habitInput === '') {
       alert('Please add a new habit and select color')
     } else {
-      onSubmit(habitInput, selectColor)
+      onSubmit(habitInput)
     }
     setHabitInput('')
   }
