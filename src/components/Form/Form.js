@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { GithubPicker } from 'react-color'
 import InputColor from 'react-input-color'
 import ColorButton from '../ColorButton.js/ColorButton'
 
@@ -37,15 +38,12 @@ export default function Form({ onSubmit, headline }) {
           <option value="Fitness">Fitness</option>
           <option value="Health">Health</option>
           <option value="Social">Social</option>
+          <option value="Finances">Finances</option>
+          <option value="Mindfulness">Mindfulness</option>
+          <option value="Hobby">Hobby</option>
           <option value="Misc">Misc</option>
         </SelectStyled>
-
-        <InputColor
-          initialValue="#5e72e4"
-          onChange={setColor}
-          placement="right"
-        />
-
+        <GithubPicker />
         <AddButton type="submit">Add habit</AddButton>
       </FormStyled>
     </>
@@ -74,6 +72,7 @@ const InputStyled = styled.input`
 `
 
 const AddButton = styled.button`
+  margin-top: 30px;
   background: hotpink;
   height: 20px;
   border-radius: 3px;
@@ -82,9 +81,14 @@ const AddButton = styled.button`
   height: 30px;
 `
 const SelectStyled = styled.select`
+  margin-top: 10px;
   position: relative;
   cursor: pointer;
   -webkit-appearance: none;
   appearance: none;
   width: 250px;
+`
+
+const ColorInputStyled = styled.section`
+  margin-top: 10px;
 `
