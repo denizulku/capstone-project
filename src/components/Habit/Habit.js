@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 export default function Habit({
@@ -8,21 +8,24 @@ export default function Habit({
   id,
   onRemove,
   onItemClick,
+  color,
 }) {
   return (
     <>
-      <p>{category}</p>
-      <StyledHabit>
-        {habits}
-        <input
-          onChange={() => onItemClick(id)}
-          checked={completed}
-          type="checkbox"
-        />
-        <DeleteButton type="button" onClick={() => onRemove(id)}>
-          x
-        </DeleteButton>
-      </StyledHabit>
+      <div style={{ backgroundColor: color }}>
+        <p>{category}</p>
+        <StyledHabit>
+          {habits}
+          <input
+            onChange={() => onItemClick(id)}
+            checked={completed}
+            type="checkbox"
+          />
+          <DeleteButton type="button" onClick={() => onRemove(id)}>
+            x
+          </DeleteButton>
+        </StyledHabit>
+      </div>
     </>
   )
 }
@@ -32,7 +35,6 @@ const StyledHabit = styled.div`
   margin-top: 10px;
   width: 260px;
   height: 25px;
-  background-color: #ffc179;
   border-radius: 10px;
 `
 const DeleteButton = styled.button`

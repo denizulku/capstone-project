@@ -6,9 +6,10 @@ import { CirclePicker } from 'react-color'
 
 export default function Form({ onSubmit, headline }) {
   const { register, handleSubmit, errors } = useForm()
+  const [color, setColor] = useState()
+
   const onHabitSubmit = (newHabit) => {
-    console.log(newHabit)
-    onSubmit({ ...newHabit, id: uuidv4() })
+    onSubmit({ ...newHabit, id: uuidv4(), color: color })
   }
   return (
     <>
@@ -19,7 +20,7 @@ export default function Form({ onSubmit, headline }) {
           placeholder="Give your habit a name"
           ref={register({ required: true })}
         />
-        {errors.habit && <ErrorMessage>This is required</ErrorMessage>}
+        {errors.habits && <ErrorMessage>This is required</ErrorMessage>}
 
         <SelectStyled name="category" ref={register({ required: true })}>
           <option value="">Choose a category for your habit</option>
@@ -37,8 +38,17 @@ export default function Form({ onSubmit, headline }) {
         <br />
         <label>Choose a color:</label>
         <ColorInputStyled>
-          <CirclePicker name="color" />
+          <CirclePicker
+            type="color"
+            name="color"
+            label="hex"
+            color={color}
+            onChange={(updatedColor) => setColor(updatedColor.hex)}
+            ref={register({ name: color }, { required: true })}
+          />
         </ColorInputStyled>
+
+        {errors.color && <ErrorMessage>This is required</ErrorMessage>}
 
         <AddButton type="submit">Add habit</AddButton>
       </FormStyled>

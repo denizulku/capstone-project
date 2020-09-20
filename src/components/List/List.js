@@ -3,7 +3,13 @@ import styled from 'styled-components/macro'
 import Habit from '../Habit/Habit'
 import { displayToday } from '../../util'
 
-export default function List({ habits, onRemove, onItemClick, headline }) {
+export default function List({
+  habits,
+  onRemove,
+  onItemClick,
+  headline,
+  color,
+}) {
   return (
     <>
       <h2>{headline}</h2>
@@ -13,6 +19,7 @@ export default function List({ habits, onRemove, onItemClick, headline }) {
       {habits.map((habit) => {
         return (
           <Habit
+            style={{ backgroundColor: color }}
             key={habit.id}
             id={habit.id}
             {...habit}
