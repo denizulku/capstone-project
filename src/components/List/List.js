@@ -13,11 +13,10 @@ export default function List({ habits, onRemove, onItemClick, headline }) {
         {habits.map((habit) => (
           <Habit
             key={habit.id}
-            id={habit.id}
-            {...habits}
+            {...habit}
             completed={habit.completed}
             onItemClick={onItemClick}
-            onRemove={onRemove}
+            onClick={onRemove}
           />
         ))}
       </HabitList>

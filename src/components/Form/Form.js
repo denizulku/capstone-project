@@ -15,7 +15,7 @@ export default function Form({ onSubmit, headline }) {
       <h2>{headline}</h2>
       <FormStyled onSubmit={handleSubmit(onHabitSubmit)}>
         <InputStyled
-          name="habits"
+          name="habit"
           placeholder="Give your habit a name"
           ref={register({ required: true })}
         />

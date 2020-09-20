@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export default function Habit({
   category,
-  habitname,
+  habit,
   completed,
   id,
   onRemove,
@@ -17,7 +17,7 @@ export default function Habit({
         </DeleteButton>
         <p>{category}</p>
         <HabitItem>
-          {habitname}
+          {habit}
           <input
             onChange={() => onItemClick(id)}
             checked={completed}
