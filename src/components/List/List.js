@@ -3,7 +3,7 @@ import styled from 'styled-components/macro'
 import Habit from '../Habit/Habit'
 import { displayToday } from '../../util'
 
-export default function List({ habits, onItemClick, headline }) {
+export default function List({ habits, category, onItemClick, headline }) {
   return (
     <>
       <h2>{headline}</h2>
@@ -15,6 +15,7 @@ export default function List({ habits, onItemClick, headline }) {
             key={habit.id}
             id={habit.id}
             name={habit.name}
+            category={habit.category}
             completed={habit.completed}
             onItemClick={onItemClick}
           />

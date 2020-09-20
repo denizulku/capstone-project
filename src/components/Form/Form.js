@@ -5,25 +5,23 @@ import { CirclePicker } from 'react-color'
 
 export default function Form({ headline }) {
   const { register, handleSubmit, errors } = useForm()
-  const onSubmit = (data) => {
+  const onSubmit = (data, e) => {
+    e.preventDefault()
     console.log(data)
   }
   return (
     <>
       <h2>{headline}</h2>
       <FormStyled onSubmit={handleSubmit(onSubmit)}>
-        <label>Insert a habit</label>
         <InputStyled
-          name="habit"
-          type="text"
+          name="habits"
           placeholder="Give your habit a name"
           ref={register({ required: true })}
         />
-        {errors.habit && <p>This is required</p>}
+        {errors.habit && <ErrorMessage>This is required</ErrorMessage>}
 
-        <label>Choose a category:</label>
         <SelectStyled name="category" ref={register({ required: true })}>
-          <option value="">Select</option>
+          <option value="">Choose a category for your habit</option>
           <option value="Morning routine">Morning routine</option>
           <option value="Nighttime routine">Nighttime routine</option>
           <option value="Fitness">Fitness</option>
@@ -34,11 +32,11 @@ export default function Form({ headline }) {
           <option value="Hobby">Hobby</option>
           <option value="Misc">Misc</option>
         </SelectStyled>
-        {errors.category && <p>This is required</p>}
-
+        {errors.category && <ErrorMessage>This is required</ErrorMessage>}
+        <br />
         <label>Choose a color:</label>
         <ColorInputStyled>
-          <CirclePicker />
+          <CirclePicker name="color" />
         </ColorInputStyled>
 
         <AddButton type="submit">Add habit</AddButton>
@@ -81,4 +79,8 @@ const ColorInputStyled = styled.section`
   margin-top: 30px;
   display: flex;
   justify-content: center;
+`
+const ErrorMessage = styled.p`
+  color: red;
+  font-size: 70%;
 `
