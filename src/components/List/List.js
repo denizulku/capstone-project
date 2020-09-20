@@ -9,17 +9,19 @@ export default function List({ habits, onRemove, onItemClick, headline }) {
       <h2>{headline}</h2>
       <p>Click '+' to create a new habit</p>
       <CurrentDate>{displayToday()}</CurrentDate>
-      <HabitList>
-        {habits.map((habit) => (
+
+      {habits.map((habit) => {
+        return (
           <Habit
             key={habit.id}
+            id={habit.id}
             {...habit}
             completed={habit.completed}
             onItemClick={onItemClick}
-            onClick={onRemove}
+            onRemove={onRemove}
           />
-        ))}
-      </HabitList>
+        )
+      })}
     </>
   )
 }
@@ -28,7 +30,7 @@ const CurrentDate = styled.div`
   text-align: center;
 `
 
-const HabitList = styled.li`
+const HabitStyled = styled.li`
   list-style: none;
   margin-top: 20px;
   margin-bottom: 150px;
