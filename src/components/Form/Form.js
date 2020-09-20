@@ -5,14 +5,14 @@ import { CirclePicker } from 'react-color'
 
 export default function Form({ headline }) {
   const { register, handleSubmit, errors } = useForm()
-  const onSubmit = (data, e) => {
+  const onHabitSubmit = (e, newHabit) => {
     e.preventDefault()
-    console.log(data)
+    console.log(newHabit)
   }
   return (
     <>
       <h2>{headline}</h2>
-      <FormStyled onSubmit={handleSubmit(onSubmit)}>
+      <FormStyled onSubmit={handleSubmit(onHabitSubmit)}>
         <InputStyled
           name="habits"
           placeholder="Give your habit a name"
