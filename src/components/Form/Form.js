@@ -1,28 +1,29 @@
 import React, { useState } from 'react'
+import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
 import { CirclePicker } from 'react-color'
 
-export default function Form({ onSubmit, headline }) {
-  const [habitInput, setHabitInput] = useState('')
-  const [categoryInput, setCategoryInput] = useState('')
-
+export default function Form({ headline }) {
+  const { register, handleSubmit, errors } = useForm()
+  const onSubmit = (data) => {
+    console.log(data)
+  }
   return (
     <>
       <h2>{headline}</h2>
-      <FormStyled onSubmit={handleSubmit}>
+      <FormStyled onSubmit={handleSubmit(onSubmit)}>
+        <label>Insert a habit</label>
         <InputStyled
-          value={habitInput}
-          onChange={(e) => setHabitInput(e.target.value)}
           name="habit"
           type="text"
-          placeholder="Insert a habit"
+          placeholder="Give your habit a name"
+          ref={register({ required: true })}
         />
-        <SelectStyled
-          value={categoryInput}
-          onChange={(e) => setCategoryInput(e.target.value)}
-          name="category"
-        >
-          <option>Choose a category</option>
+        {errors.habit && <p>This is required</p>}
+
+        <label>Choose a category:</label>
+        <SelectStyled name="category" ref={register({ required: true })}>
+          <option value="">Select</option>
           <option value="Morning routine">Morning routine</option>
           <option value="Nighttime routine">Nighttime routine</option>
           <option value="Fitness">Fitness</option>
@@ -33,25 +34,17 @@ export default function Form({ onSubmit, headline }) {
           <option value="Hobby">Hobby</option>
           <option value="Misc">Misc</option>
         </SelectStyled>
+        {errors.category && <p>This is required</p>}
+
+        <label>Choose a color:</label>
         <ColorInputStyled>
           <CirclePicker />
         </ColorInputStyled>
+
         <AddButton type="submit">Add habit</AddButton>
       </FormStyled>
     </>
   )
-
-  function handleSubmit(event) {
-    event.preventDefault()
-
-    if (habitInput === '') {
-      alert('Please add a new habit and select color')
-    } else {
-      onSubmit(habitInput)
-    }
-    setHabitInput('')
-    setCategoryInput('')
-  }
 }
 
 const FormStyled = styled.form`
@@ -64,7 +57,7 @@ const InputStyled = styled.input`
 `
 
 const AddButton = styled.button`
-  margin-top: 30px;
+  margin-top: 40px;
   color: white;
   font-weight: bold;
   background: #b7aefd;
@@ -85,8 +78,7 @@ const SelectStyled = styled.select`
 `
 
 const ColorInputStyled = styled.section`
-  margin-top: 10px;
-  position: relative;
-  align-items: center;
-  text-align: center;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
 `

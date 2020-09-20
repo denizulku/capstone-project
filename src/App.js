@@ -40,6 +40,7 @@ function App() {
   function addHabit(name) {
     setHabits([...habits, { name, completed: false, id: uuid() }])
   }
+
   function toggleCompleted(id) {
     const index = habits.findIndex((habit) => habit.id === id)
     const habit = habits[index]

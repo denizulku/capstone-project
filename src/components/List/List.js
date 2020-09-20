@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import Habit from '../Habit/Habit'
 import { displayToday } from '../../util'
@@ -17,7 +17,6 @@ export default function List({ habits, onItemClick, headline }) {
             name={habit.name}
             completed={habit.completed}
             onItemClick={onItemClick}
-            color={habit.color}
           />
         ))}
       </HabitList>
