@@ -5,11 +5,11 @@ import List from './components/List/List'
 import Calendar from './components/Calendar/Calendar'
 import Navigation from './components/Navigation/Navigation'
 import Header from './components/Header/Header'
-import handleHabits from './handleHabits'
+import HandleHabits from './HandleHabits.js'
 import { v4 as uuid } from 'uuid'
 
 function App() {
-  const { addHabit, toggleCompleted, removeHabit } = handleHabits()
+  const { addHabit, toggleCompleted, removeHabit } = HandleHabits()
 
   return (
     <Router>
