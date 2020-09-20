@@ -14,7 +14,7 @@ export default function List({ habits, onRemove, onItemClick, headline }) {
           <Habit
             key={habit.id}
             id={habit.id}
-            name={habit}
+            {...habits}
             completed={habit.completed}
             onItemClick={onItemClick}
             onRemove={onRemove}

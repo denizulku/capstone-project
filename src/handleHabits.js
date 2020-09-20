@@ -22,6 +22,7 @@ export default function HandleHabits() {
     setHabits([...habits.slice(0, index), ...habits.slice(index + 1)])
   }
   return {
+    habits,
     addHabit,
     toggleCompleted,
     removeHabit,

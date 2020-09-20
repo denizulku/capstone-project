@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
+import { v4 as uuidv4 } from 'uuid'
 import { CirclePicker } from 'react-color'
 
-export default function Form({ headline }) {
+export default function Form({ onSubmit, headline }) {
   const { register, handleSubmit, errors } = useForm()
-  const onHabitSubmit = (e, newHabit) => {
-    e.preventDefault()
+  const onHabitSubmit = (newHabit) => {
     console.log(newHabit)
+    onSubmit({ ...newHabit, id: uuidv4() })
   }
   return (
     <>

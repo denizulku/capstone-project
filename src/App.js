@@ -9,7 +9,7 @@ import HandleHabits from './HandleHabits.js'
 import { v4 as uuid } from 'uuid'
 
 function App() {
-  const { addHabit, toggleCompleted, removeHabit } = HandleHabits()
+  const { habits, addHabit, toggleCompleted, removeHabit } = HandleHabits()
 
   return (
     <Router>
@@ -18,9 +18,10 @@ function App() {
         <Switch>
           <Route exact path="/">
             <List
+              habits={habits}
               onItemClick={toggleCompleted}
               headline={'Dashboard'}
-              onDelete={removeHabit}
+              onRemove={removeHabit}
             />
           </Route>
           <Route path="/create">

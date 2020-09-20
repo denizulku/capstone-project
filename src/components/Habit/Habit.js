@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export default function Habit({
   category,
-  name,
+  habitname,
   completed,
   id,
   onRemove,
@@ -11,20 +11,20 @@ export default function Habit({
 }) {
   return (
     <>
-      <div>
+      <StyledHabit>
         <DeleteButton type="button" onClick={() => onRemove(id)}>
           x
         </DeleteButton>
-        {category}
-        <HabitItem className="Habit">
-          {name}
+        <p>{category}</p>
+        <HabitItem>
+          {habitname}
           <input
             onChange={() => onItemClick(id)}
             checked={completed}
             type="checkbox"
           />
         </HabitItem>
-      </div>
+      </StyledHabit>
     </>
   )
 }
@@ -44,3 +44,4 @@ const DeleteButton = styled.button`
   top: 5px;
   right: 5px;
 `
+const StyledHabit = styled.section``
