@@ -5,11 +5,16 @@ import { v4 as uuidv4 } from 'uuid'
 import { CirclePicker } from 'react-color'
 
 export default function Form({ onSubmit, headline }) {
-  const { register, handleSubmit, errors } = useForm()
+  const { register, handleSubmit, setValue, errors, trigger } = useForm()
   const [color, setColor] = useState()
 
   const onHabitSubmit = (newHabit) => {
     onSubmit({ ...newHabit, id: uuidv4(), color: color })
+  }
+  const handleColorSelect = (color) => {
+    setColor(color)
+    setValue('color', color)
+    trigger('color')
   }
   return (
     <>
@@ -43,8 +48,8 @@ export default function Form({ onSubmit, headline }) {
             name="color"
             label="hex"
             color={color}
-            onChange={(updatedColor) => setColor(updatedColor.hex)}
-            ref={register({ name: color }, { required: true })}
+            onChange={(updatedColor) => handleColorSelect(updatedColor.hex)}
+            ref={register({ name: 'color' }, { required: true })}
           />
         </ColorInputStyled>
 
