@@ -15,12 +15,12 @@ export default function Habit({
       <Container style={{ backgroundColor: color }}>
         <StyledCategory>{category}</StyledCategory>
         <StyledHabit>
-          {habits}
           <input
             onChange={() => onItemClick(id)}
             checked={completed}
             type="checkbox"
           />
+          {habits}
           <DeleteButton type="button" onClick={() => onRemove(id)}>
             x
           </DeleteButton>
@@ -34,7 +34,7 @@ const StyledHabit = styled.div`
   display: inline-block;
   margin-top: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   font-family: Roboto, sans-serif;
   font-size: 18px;
 `
