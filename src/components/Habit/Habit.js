@@ -1,5 +1,13 @@
 import React from 'react'
+import IconDelete from '../../components/assets/icons/IconDelete.svg'
 import styled from 'styled-components'
+import Checkbox from '../Checkbox/Checkbox'
+
+const Icon = styled.svg`
+  fill: none;
+  stroke: black;
+  stroke-width: 2px;
+`
 
 export default function Habit({
   category,
@@ -15,15 +23,15 @@ export default function Habit({
       <Container style={{ backgroundColor: color }}>
         <StyledCategory>{category}</StyledCategory>
         <StyledHabit>
+          <DeleteButton type="button" onClick={() => onRemove(id)}>
+            <img src={IconDelete} alt="Delete habit" />
+          </DeleteButton>
+          {habits}
           <input
             onChange={() => onItemClick(id)}
             checked={completed}
             type="checkbox"
           />
-          {habits}
-          <DeleteButton type="button" onClick={() => onRemove(id)}>
-            x
-          </DeleteButton>
         </StyledHabit>
       </Container>
     </>
@@ -34,14 +42,12 @@ const StyledHabit = styled.div`
   display: inline-block;
   margin-top: 10px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   font-family: Roboto, sans-serif;
   font-size: 18px;
 `
-const DeleteButton = styled.button`
-  border: none;
-  background-color: transparent;
-  position: relative;
+const DeleteButton = styled.div`
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.25));
 `
 const Container = styled.section`
   border-radius: 5px;

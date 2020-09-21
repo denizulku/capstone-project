@@ -3,17 +3,10 @@ import styled from 'styled-components/macro'
 import Habit from '../Habit/Habit'
 import { displayToday } from '../../util'
 
-export default function List({
-  habits,
-  onRemove,
-  onItemClick,
-  headline,
-  color,
-}) {
+export default function List({ habits, onRemove, onItemClick, headline }) {
   return (
     <>
       <h2>{headline}</h2>
-      <p>Click '+' to create a new habit</p>
       <CurrentDate>{displayToday()}</CurrentDate>
 
       {habits.map((habit) => {
@@ -28,6 +21,7 @@ export default function List({
           />
         )
       })}
+      <CreateHabitText>Click '+' to create a new habit</CreateHabitText>
     </>
   )
 }
@@ -36,10 +30,6 @@ const CurrentDate = styled.div`
   text-align: center;
 `
 
-const HabitStyled = styled.li`
-  list-style: none;
-  margin-top: 20px;
-  margin-bottom: 150px;
-  position: relative;
+const CreateHabitText = styled.p`
   text-align: center;
 `

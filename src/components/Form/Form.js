@@ -22,7 +22,7 @@ export default function Form({ onSubmit, headline }) {
       <FormStyled onSubmit={handleSubmit(onHabitSubmit)}>
         <InputStyled
           name="habits"
-          placeholder="Give your habit a name"
+          placeholder="Insert a habit, e.g.: 'Go to gym', 'Journal'.. "
           ref={register({ required: true })}
         />
         {errors.habits && <ErrorMessage>This is required</ErrorMessage>}
