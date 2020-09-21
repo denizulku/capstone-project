@@ -32,4 +32,5 @@ const CurrentDate = styled.div`
 
 const CreateHabitText = styled.p`
   text-align: center;
+  margin-bottom: 120px;
 `

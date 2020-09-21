@@ -1,13 +1,6 @@
 import React from 'react'
 import IconDelete from '../../components/assets/icons/IconDelete.svg'
 import styled from 'styled-components'
-import Checkbox from '../Checkbox/Checkbox'
-
-const Icon = styled.svg`
-  fill: none;
-  stroke: black;
-  stroke-width: 2px;
-`
 
 export default function Habit({
   category,

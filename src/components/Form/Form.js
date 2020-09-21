@@ -25,7 +25,7 @@ export default function Form({ onSubmit, headline }) {
       <FormStyled onSubmit={handleSubmit(onHabitSubmit)}>
         <InputStyled
           name="habits"
-          placeholder="Insert a habit, e.g.: 'Go to gym', 'Journal'.. "
+          placeholder="Insert a habit, e.g.: 'Gym', 'Journal'.. "
           ref={register({ required: true })}
         />
         {errors.habits && <ErrorMessage>This is required</ErrorMessage>}
@@ -75,7 +75,7 @@ const AddButton = styled.button`
   margin-top: 30px;
   color: white;
   font-weight: bold;
-  background: #b7aefd;
+  background: #a296ff;
   height: 20px;
   border-radius: 3px;
   border: 10px;
@@ -83,13 +83,11 @@ const AddButton = styled.button`
   height: 30px;
 `
 const SelectStyled = styled.select`
+  --webkit-appearance: none;
   margin-top: 10px;
   position: relative;
-  cursor: pointer;
-  -webkit-appearance: none;
-  appearance: none;
-  width: 250px;
   height: 30px;
+  width: 260px;
 `
 
 const ColorInputStyled = styled.section`
