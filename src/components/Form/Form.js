@@ -26,9 +26,14 @@ export default function Form({ onSubmit, headline }) {
         <InputStyled
           name="habits"
           placeholder="Insert a habit, e.g.: 'Gym', 'Journal'.. "
-          ref={register({ required: true })}
+          ref={register({ required: true, maxLength: 26 })}
         />
-        {errors.habits && <ErrorMessage>This is required</ErrorMessage>}
+        {errors.habits && errors.habits.type === 'required' && (
+          <ErrorMessage>This is required</ErrorMessage>
+        )}
+        {errors.habits && errors.habits.type === 'maxLength' && (
+          <ErrorMessage>Max length exceeded</ErrorMessage>
+        )}
 
         <SelectStyled name="category" ref={register({ required: true })}>
           <option value="">Choose a category for your habit</option>
