@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 import { v4 as uuidv4 } from 'uuid'
 import { CirclePicker } from 'react-color'
 
 export default function Form({ onSubmit, headline }) {
+  const history = useHistory()
   const { register, handleSubmit, setValue, errors, trigger } = useForm()
   const [color, setColor] = useState()
 
   const onHabitSubmit = (newHabit) => {
     onSubmit({ ...newHabit, id: uuidv4(), color: color })
+    history.push('/')
   }
   const handleColorSelect = (color) => {
     setColor(color)
