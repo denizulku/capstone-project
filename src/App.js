@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Form from './components/Form/Form'
 import List from './components/List/List'
@@ -6,7 +6,6 @@ import Calendar from './components/Calendar/Calendar'
 import Navigation from './components/Navigation/Navigation'
 import Header from './components/Header/Header'
 import HandleHabits from './HandleHabits.js'
-import { v4 as uuid } from 'uuid'
 
 function App() {
   const { habits, addHabit, toggleCompleted, removeHabit } = HandleHabits()

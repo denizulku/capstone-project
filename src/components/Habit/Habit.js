@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 export default function Habit({
@@ -12,8 +12,8 @@ export default function Habit({
 }) {
   return (
     <>
-      <div style={{ backgroundColor: color }}>
-        <p>{category}</p>
+      <Container style={{ backgroundColor: color }}>
+        <StyledCategory>{category}</StyledCategory>
         <StyledHabit>
           {habits}
           <input
@@ -25,7 +25,7 @@ export default function Habit({
             x
           </DeleteButton>
         </StyledHabit>
-      </div>
+      </Container>
     </>
   )
 }
@@ -33,12 +33,25 @@ export default function Habit({
 const StyledHabit = styled.div`
   display: inline-block;
   margin-top: 10px;
-  width: 260px;
-  height: 25px;
-  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
 `
 const DeleteButton = styled.button`
   border: none;
   background-color: transparent;
   position: relative;
+`
+const Container = styled.section`
+  border-radius: 5px;
+  padding: 10px;
+  margin: 20px;
+`
+
+const StyledCategory = styled.p`
+  text-align: center;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
 `

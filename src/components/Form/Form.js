@@ -40,13 +40,11 @@ export default function Form({ onSubmit, headline }) {
           <option value="Misc">Misc</option>
         </SelectStyled>
         {errors.category && <ErrorMessage>This is required</ErrorMessage>}
-        <br />
-        <label>Choose a color:</label>
+
+        <Label>Choose a color:</Label>
         <ColorInputStyled>
           <CirclePicker
-            type="color"
             name="color"
-            label="hex"
             color={color}
             onChange={(updatedColor) => handleColorSelect(updatedColor.hex)}
             ref={register({ name: 'color' }, { required: true })}
@@ -71,7 +69,7 @@ const InputStyled = styled.input`
 `
 
 const AddButton = styled.button`
-  margin-top: 40px;
+  margin-top: 30px;
   color: white;
   font-weight: bold;
   background: #b7aefd;
@@ -92,11 +90,16 @@ const SelectStyled = styled.select`
 `
 
 const ColorInputStyled = styled.section`
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
 `
 const ErrorMessage = styled.p`
   color: red;
   font-size: 70%;
+`
+
+const Label = styled.p`
+  font-size: 16px;
+  padding-top: 10px;
 `
