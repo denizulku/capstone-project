@@ -8,10 +8,17 @@ export default {
 
 const Template = (args) => <List {...args} />
 
-export const Primary = Template.bind({})
+export const ListItems = Template.bind({})
 
-Primary.args = {
-  habits: ['foo', 'bar'],
+ListItems.args = {
+  habits: ['foo'],
 }
 
-Primary.argTypes = { onClick: { action: 'checkHabit' } }
+ListItems.decorators = [
+  (Story) => (
+    <div style={{ background: 'rgb(244, 67, 54)' }}>
+      <Story />
+    </div>
+  ),
+]
+ListItems.argTypes = { onClick: { action: 'checkHabit' } }
