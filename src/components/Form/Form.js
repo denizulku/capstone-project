@@ -23,50 +23,48 @@ export default function Form({ onSubmit, headline }) {
     <>
       <h2>{headline}</h2>
       <FormStyled onSubmit={handleSubmit(onHabitSubmit)}>
-        <label>
-          <InputStyled
-            data-cy="habits"
-            name="habits"
-            placeholder="Insert a habit, e.g.: 'Gym', 'Journal'.. "
-            ref={register({ required: true, maxLength: 26 })}
-          />
-        </label>
+        <InputStyled
+          data-cy="habits"
+          name="habits"
+          placeholder="Insert a habit, e.g.: 'Gym', 'Journal'.. "
+          ref={register({ required: true, maxLength: 26 })}
+        />
+
         {errors.habits && errors.habits.type === 'required' && (
           <ErrorMessage>This is required</ErrorMessage>
         )}
         {errors.habits && errors.habits.type === 'maxLength' && (
           <ErrorMessage>Max length exceeded</ErrorMessage>
         )}
-        <label>
-          <SelectStyled
-            data-cy="category"
-            name="category"
-            ref={register({ required: true })}
-          >
-            <option value="">Choose a category for your habit</option>
-            <option value="Morning routine">Morning routine</option>
-            <option value="Nighttime routine">Nighttime routine</option>
-            <option value="Fitness">Fitness</option>
-            <option value="Health">Health</option>
-            <option value="Social">Social</option>
-            <option value="Finances">Finances</option>
-            <option value="Mindfulness">Mindfulness</option>
-            <option value="Hobby">Hobby</option>
-            <option value="Misc">Misc</option>
-          </SelectStyled>
-        </label>
+
+        <SelectStyled
+          data-cy="category"
+          name="category"
+          ref={register({ required: true })}
+        >
+          <option value="">Choose a category for your habit</option>
+          <option value="Morning routine">Morning routine</option>
+          <option value="Nighttime routine">Nighttime routine</option>
+          <option value="Fitness">Fitness</option>
+          <option value="Health">Health</option>
+          <option value="Social">Social</option>
+          <option value="Finances">Finances</option>
+          <option value="Mindfulness">Mindfulness</option>
+          <option value="Hobby">Hobby</option>
+          <option value="Misc">Misc</option>
+        </SelectStyled>
+
         {errors.category && <ErrorMessage>This is required</ErrorMessage>}
-        <label>
-          <Label>Choose a color:</Label>
-          <ColorInputStyled>
-            <CirclePicker
-              name="color"
-              color={color}
-              onChange={(updatedColor) => handleColorSelect(updatedColor.hex)}
-              ref={register({ name: 'color' }, { required: true })}
-            />
-          </ColorInputStyled>
-        </label>
+
+        <Label>Choose a color:</Label>
+        <ColorInputStyled>
+          <CirclePicker
+            name="color"
+            color={color}
+            onChange={(updatedColor) => handleColorSelect(updatedColor.hex)}
+            ref={register({ name: 'color' }, { required: true })}
+          />
+        </ColorInputStyled>
 
         {errors.color && <ErrorMessage>This is required</ErrorMessage>}
 
