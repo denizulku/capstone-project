@@ -15,6 +15,6 @@ context('Create Habit', () => {
       .select('Fitness')
       .should('have.value', 'Fitness')
 
-    cy.get('circle-picker')
+    cy.get('.circle-picker')
   })
 })

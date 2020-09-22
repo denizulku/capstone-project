@@ -60,7 +60,6 @@ export default function Form({ onSubmit, headline }) {
           <Label>Choose a color:</Label>
           <ColorInputStyled>
             <CirclePicker
-              data-cy="color"
               name="color"
               color={color}
               onChange={(updatedColor) => handleColorSelect(updatedColor.hex)}
