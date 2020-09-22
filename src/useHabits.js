@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function HandleHabits() {
+export default function useHabits() {
   const [habits, setHabits] = useState([])
 
   function addHabit(newHabit) {
