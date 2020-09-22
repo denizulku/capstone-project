@@ -11,7 +11,7 @@ export default function Navigation() {
       <NavLink exact to="/">
         <img src={IconHome} alt="Go to Dashboard page" />
       </NavLink>
-      <NavLink to="/Create">
+      <NavLink data-cy="create" to="/Create">
         <AddIcon src={IconAdd} alt="Create a habit" />
       </NavLink>
       <NavLink to="/Overview">
