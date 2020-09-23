@@ -83,6 +83,11 @@ export default function Form({ onSubmit, headline }) {
 
 const FormStyled = styled.form`
   text-align: center;
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
 `
 const InputStyled = styled.input`
   width: 70%;
