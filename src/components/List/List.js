@@ -15,7 +15,10 @@ export default function List({ habits, onRemove, onItemClick, headline }) {
             key={habit.id}
             id={habit.id}
             {...habit}
-            completed={habit.completed}
+            completed={
+              (habit.completedDates || []).indexOf(new Date().toDateString()) >
+              -1
+            }
             onItemClick={onItemClick}
             onRemove={onRemove}
           />
