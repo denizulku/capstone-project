@@ -1,7 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function useHabits() {
-  const [habits, setHabits] = useState([])
+  const [habits, setHabits] = useState(
+    JSON.parse(localStorage.getItem('habits')) || []
+  )
+
+  useEffect(() => {
+    localStorage.setItem('habits', JSON.stringify(habits))
+  }, [habits])
 
   function addHabit(newHabit) {
     setHabits([...habits, newHabit])
