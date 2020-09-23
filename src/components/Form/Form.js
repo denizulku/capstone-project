@@ -102,7 +102,7 @@ const AddButton = styled.button`
   border-radius: 3px;
   border: 10px;
   width: 70%;
-  height: 50px;
+  height: 7vh;
   margin-bottom: 120px;
 `
 const SelectStyled = styled.select`
