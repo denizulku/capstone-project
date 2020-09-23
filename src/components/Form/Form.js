@@ -82,12 +82,11 @@ export default function Form({ onSubmit, headline }) {
 }
 
 const FormStyled = styled.form`
-  align-items: center;
   text-align: center;
 `
 const InputStyled = styled.input`
-  width: 250px;
-  height: 30px;
+  width: 70%;
+  height: 5vh;
 `
 
 const AddButton = styled.button`
@@ -95,18 +94,17 @@ const AddButton = styled.button`
   color: white;
   font-weight: bold;
   background: #a296ff;
-  height: 20px;
   border-radius: 3px;
   border: 10px;
-  width: 250px;
-  height: 30px;
+  width: 70%;
+  height: 50px;
 `
 const SelectStyled = styled.select`
   --webkit-appearance: none;
   margin-top: 10px;
   position: relative;
-  height: 30px;
-  width: 260px;
+  height: 5vh;
+  width: 73%;
 `
 
 const ColorInputStyled = styled.section`

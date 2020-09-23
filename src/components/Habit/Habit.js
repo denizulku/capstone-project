@@ -1,6 +1,6 @@
 import React from 'react'
 import IconDelete from '../../components/assets/icons/IconDelete.svg'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import imagePathCircle from '../assets/icons/circle.svg'
 import imagePathCheckedCircle from '../assets/icons/checked-circle.svg'
 
