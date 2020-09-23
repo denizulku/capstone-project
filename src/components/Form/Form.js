@@ -103,6 +103,7 @@ const AddButton = styled.button`
   border: 10px;
   width: 70%;
   height: 50px;
+  margin-bottom: 120px;
 `
 const SelectStyled = styled.select`
   --webkit-appearance: none;
