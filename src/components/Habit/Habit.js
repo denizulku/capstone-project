@@ -1,5 +1,5 @@
 import React from 'react'
-import IconDelete from '../../components/assets/icons/IconDelete.svg'
+import { ReactComponent as IconDelete } from '../../components/assets/icons/IconDelete.svg'
 import styled from 'styled-components/macro'
 import imagePathCircle from '../assets/icons/circle.svg'
 import imagePathCheckedCircle from '../assets/icons/checked-circle.svg'
@@ -18,9 +18,10 @@ export default function Habit({
       <Container style={{ backgroundColor: color }}>
         <StyledCategory>{category}</StyledCategory>
         <StyledHabit>
-          <DeleteButton type="button" onClick={() => onRemove(id)}>
-            <img src={IconDelete} alt="Delete habit" />
-          </DeleteButton>
+          <DeleteButton
+            type="button"
+            onClick={() => onRemove(id)}
+          ></DeleteButton>
           {habits}
           <label>
             <HiddenCheckbox
@@ -44,7 +45,7 @@ const StyledHabit = styled.div`
   font-family: Roboto, sans-serif;
   font-size: 18px;
 `
-const DeleteButton = styled.div`
+const DeleteButton = styled(IconDelete)`
   filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.25));
 `
 const Container = styled.section`
