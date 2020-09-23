@@ -2,6 +2,6 @@
   <rect id="Rechteck_5" data-name="Rechteck 5" width="5" height="20" transform="translate(47 19)" fill="#707070"/>
   <g id="Komponente_5_1" data-name="Komponente 5 – 1">
     <text id="H_bits" data-name="H  bits" transform="translate(0 39)" fill="#707070" font-size="40" font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700"><tspan x="0" y="0" xml:space="preserve">H  bits</tspan></text>
-    <path id="Icon_ionic-ios-checkmark-circle" data-name="Icon ionic-ios-checkmark-circle" d="M14.375,3.375a11,11,0,1,0,11,11A11,11,0,0,0,14.375,3.375Zm5.632,7.959-7.071,7.1h-.005a.955.955,0,0,1-.613.291.926.926,0,0,1-.619-.3L8.738,15.464a.211.211,0,0,1,0-.3l.941-.941a.2.2,0,0,1,.3,0l2.348,2.348,6.452-6.5a.209.209,0,0,1,.148-.063h0a.192.192,0,0,1,.148.063l.925.957A.208.208,0,0,1,20.007,11.334Z" transform="translate(25.725 14.625)" fill="#b7aefd"/>
+    <path id="Icon_ionic-ios-checkmark-circle" data-name="Icon ionic-ios-checkmark-circle" d="M14.375,3.375a11,11,0,1,0,11,11A11,11,0,0,0,14.375,3.375Zm5.632,7.959-7.071,7.1h-.005a.955.955,0,0,1-.613.291.926.926,0,0,1-.619-.3L8.738,15.464a.211.211,0,0,1,0-.3l.941-.941a.2.2,0,0,1,.3,0l2.348,2.348,6.452-6.5a.209.209,0,0,1,.148-.063h0a.192.192,0,0,1,.148.063l.925.957A.208.208,0,0,1,20.007,11.334Z" transform="translate(24.725 14.625)" fill="#b7aefd"/>
   </g>
 </svg>
