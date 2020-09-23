@@ -27,7 +27,11 @@ export default function Form({ onSubmit, headline }) {
           data-cy="habits"
           name="habits"
           placeholder="Insert a habit, e.g.: 'Gym', 'Journal'.. "
-          ref={register({ required: true, maxLength: 26 })}
+          ref={register({
+            required: true,
+            pattern: { value: /.*\S.*/, message: 'This is required' },
+            maxLength: 26,
+          })}
         />
 
         {errors.habits && errors.habits.type === 'required' && (
@@ -35,6 +39,9 @@ export default function Form({ onSubmit, headline }) {
         )}
         {errors.habits && errors.habits.type === 'maxLength' && (
           <ErrorMessage>Max length exceeded</ErrorMessage>
+        )}
+        {errors.habits && errors.habits.type === 'pattern' && (
+          <ErrorMessage>This is required</ErrorMessage>
         )}
 
         <SelectStyled
