@@ -1,24 +1,21 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import IconHome from '../../components/assets/icons/IconHome.svg'
-import IconAdd from '../../components/assets/icons/IconAdd.svg'
-import IconMonthlyOverview from '../../components/assets/icons/IconMonthlyOverview.svg'
+import { ReactComponent as IconHome } from '../../components/assets/icons/IconHome.svg'
+import { ReactComponent as IconAdd } from '../../components/assets/icons/IconAdd.svg'
+import { ReactComponent as IconMonthlyOverview } from '../../components/assets/icons/IconMonthlyOverview.svg'
 
 export default function Navigation() {
   return (
     <NavigationStyled>
       <NavLink exact to="/">
-        <img src={IconHome} alt="Go to Dashboard page" />
+        <IconHome />
       </NavLink>
       <NavLink data-cy="create" to="/Create">
-        <AddIcon src={IconAdd} alt="Create a habit" />
+        <AddIcon />
       </NavLink>
       <NavLink to="/Overview">
-        <img
-          src={IconMonthlyOverview}
-          alt="Get a monthly overview of your habits"
-        />
+        <IconMonthlyOverview />
       </NavLink>
     </NavigationStyled>
   )
@@ -38,7 +35,7 @@ const NavigationStyled = styled.div`
   background: #bcbbbc;
 `
 
-const AddIcon = styled.img`
+const AddIcon = styled(IconAdd)`
   z-index: 100;
   position: relative;
   bottom: 30px;
