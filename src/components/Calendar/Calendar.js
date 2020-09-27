@@ -36,6 +36,7 @@ export default function Calendar({ headline }) {
       </StyledCalendar>
       {selectedDate && (
         <List
+          isReadOnly
           habits={habits.filter(
             (habit) => (habit.completedDates || []).indexOf(selectedDate) > -1
           )}

@@ -12,25 +12,30 @@ export default function Habit({
   onRemove,
   onItemClick,
   color,
+  isReadOnly,
 }) {
   return (
     <>
       <Container style={{ backgroundColor: color }}>
         <StyledCategory>{category}</StyledCategory>
         <StyledHabit>
-          <DeleteButton
-            type="button"
-            onClick={() => onRemove(id)}
-          ></DeleteButton>
+          {!isReadOnly && (
+            <DeleteButton
+              type="button"
+              onClick={() => onRemove(id)}
+            ></DeleteButton>
+          )}
           {habits}
-          <label>
-            <HiddenCheckbox
-              onChange={() => onItemClick(id)}
-              checked={completed}
-              type="checkbox"
-            />
-            <StyledCheckbox checked={completed} />
-          </label>
+          {!isReadOnly && (
+            <label>
+              <HiddenCheckbox
+                onChange={() => onItemClick(id)}
+                checked={completed}
+                type="checkbox"
+              />
+              <StyledCheckbox checked={completed} />
+            </label>
+          )}
         </StyledHabit>
       </Container>
     </>
