@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { ReactComponent as IconHome } from '../../components/assets/icons/IconHome.svg'
+import { ReactComponent as IconCancel } from '../../components/assets/icons/IconCancel.svg'
 import { ReactComponent as IconAdd } from '../../components/assets/icons/IconAdd.svg'
 import { ReactComponent as IconMonthlyOverview } from '../../components/assets/icons/IconMonthlyOverview.svg'
 
@@ -9,14 +10,14 @@ export default function Navigation() {
   return (
     <>
       <NavigationStyled>
-        <NavLink exact to="/">
-          <IconHome />
+        <NavLink exact to="/" activeStyle={{ fill: '#ffffff' }}>
+          <HomeIconStyled />
         </NavLink>
         <NavLink data-cy="create" to="/Create">
           <AddIcon />
         </NavLink>
-        <NavLink to="/Overview">
-          <IconMonthlyOverview />
+        <NavLink to="/Overview" activeStyle={{ fill: '#ffffff' }}>
+          <OverviewIconStyled />
         </NavLink>
       </NavigationStyled>
     </>
@@ -35,6 +36,14 @@ const NavigationStyled = styled.div`
   justify-content: space-evenly;
   align-items: center;
   background: #bcbbbc;
+`
+
+const HomeIconStyled = styled(IconHome)`
+  z-index: 100;
+`
+
+const OverviewIconStyled = styled(IconMonthlyOverview)`
+  z-index: 100;
 `
 
 const AddIcon = styled(IconAdd)`

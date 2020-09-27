@@ -4,8 +4,9 @@ import { useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { v4 as uuidv4 } from 'uuid'
 import { CirclePicker } from 'react-color'
+import { useSpring, animated } from 'react-spring'
 
-export default function Form({ onSubmit, headline }) {
+export default function Form({ onSubmit, headline, formAnimation }) {
   const history = useHistory()
   const { register, handleSubmit, setValue, errors, trigger } = useForm()
   const [color, setColor] = useState()
@@ -21,62 +22,64 @@ export default function Form({ onSubmit, headline }) {
   }
   return (
     <>
-      <h2>{headline}</h2>
-      <FormStyled onSubmit={handleSubmit(onHabitSubmit)}>
-        <InputStyled
-          data-cy="habits"
-          name="habits"
-          placeholder="Insert a habit, e.g.: 'Gym', 'Journal'.. "
-          ref={register({
-            required: true,
-            pattern: { value: /.*\S.*/, message: 'This is required' },
-            maxLength: 26,
-          })}
-        />
-
-        {errors.habits && errors.habits.type === 'required' && (
-          <ErrorMessage>This is required</ErrorMessage>
-        )}
-        {errors.habits && errors.habits.type === 'maxLength' && (
-          <ErrorMessage>Max length exceeded</ErrorMessage>
-        )}
-        {errors.habits && errors.habits.type === 'pattern' && (
-          <ErrorMessage>This is required</ErrorMessage>
-        )}
-
-        <SelectStyled
-          data-cy="category"
-          name="category"
-          ref={register({ required: true })}
-        >
-          <option value="">Choose a category for your habit</option>
-          <option value="Morning routine">Morning routine</option>
-          <option value="Nighttime routine">Nighttime routine</option>
-          <option value="Fitness">Fitness</option>
-          <option value="Health">Health</option>
-          <option value="Social">Social</option>
-          <option value="Finances">Finances</option>
-          <option value="Mindfulness">Mindfulness</option>
-          <option value="Hobby">Hobby</option>
-          <option value="Misc">Misc</option>
-        </SelectStyled>
-
-        {errors.category && <ErrorMessage>This is required</ErrorMessage>}
-
-        <Label>Choose a color:</Label>
-        <ColorInputStyled>
-          <CirclePicker
-            name="color"
-            color={color}
-            onChange={(updatedColor) => handleColorSelect(updatedColor.hex)}
-            ref={register({ name: 'color' }, { required: true })}
+      <animated.div style={formAnimation}>
+        <h2>{headline}</h2>
+        <FormStyled onSubmit={handleSubmit(onHabitSubmit)}>
+          <InputStyled
+            data-cy="habits"
+            name="habits"
+            placeholder="Insert a habit, e.g.: 'Gym', 'Journal'.. "
+            ref={register({
+              required: true,
+              pattern: { value: /.*\S.*/, message: 'This is required' },
+              maxLength: 26,
+            })}
           />
-        </ColorInputStyled>
 
-        {errors.color && <ErrorMessage>This is required</ErrorMessage>}
+          {errors.habits && errors.habits.type === 'required' && (
+            <ErrorMessage>This is required</ErrorMessage>
+          )}
+          {errors.habits && errors.habits.type === 'maxLength' && (
+            <ErrorMessage>Max length exceeded</ErrorMessage>
+          )}
+          {errors.habits && errors.habits.type === 'pattern' && (
+            <ErrorMessage>This is required</ErrorMessage>
+          )}
 
-        <AddButton type="submit">Add habit</AddButton>
-      </FormStyled>
+          <SelectStyled
+            data-cy="category"
+            name="category"
+            ref={register({ required: true })}
+          >
+            <option value="">Choose a category for your habit</option>
+            <option value="Morning routine">Morning routine</option>
+            <option value="Nighttime routine">Nighttime routine</option>
+            <option value="Fitness">Fitness</option>
+            <option value="Health">Health</option>
+            <option value="Social">Social</option>
+            <option value="Finances">Finances</option>
+            <option value="Mindfulness">Mindfulness</option>
+            <option value="Hobby">Hobby</option>
+            <option value="Misc">Misc</option>
+          </SelectStyled>
+
+          {errors.category && <ErrorMessage>This is required</ErrorMessage>}
+
+          <Label>Choose a color:</Label>
+          <ColorInputStyled>
+            <CirclePicker
+              name="color"
+              color={color}
+              onChange={(updatedColor) => handleColorSelect(updatedColor.hex)}
+              ref={register({ name: 'color' }, { required: true })}
+            />
+          </ColorInputStyled>
+
+          {errors.color && <ErrorMessage>This is required</ErrorMessage>}
+
+          <AddButton type="submit">Add habit</AddButton>
+        </FormStyled>
+      </animated.div>
     </>
   )
 }
