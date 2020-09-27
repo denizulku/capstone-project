@@ -11,7 +11,7 @@ export default function Calendar({ headline }) {
   const modifiers = {
     sundays: { daysOfWeek: [0] },
   }
-  const [selectedDate, setSelectedDate] = useState()
+  const [selectedDate, setSelectedDate] = useState(new Date().toDateString())
   const habits = JSON.parse(localStorage.getItem('habits'))
 
   const modifiersStyles = {
