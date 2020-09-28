@@ -22,6 +22,7 @@ export default function Header() {
 }
 
 const StyledHeader = styled.header`
+  margin-top: 0;
   padding-top: 20px;
   text-align: center;
   align-items: center;
