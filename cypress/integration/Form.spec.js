@@ -2,7 +2,7 @@
 
 context('Create Habit', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000//Create')
+    cy.visit('http://localhost:3000/Create')
   })
   it('submits a new habit', () => {
     cy.get('[data-cy=create]')

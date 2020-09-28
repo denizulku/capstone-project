@@ -11,13 +11,13 @@ export default function Navigation() {
   return (
     <>
       <NavigationStyled>
-        <NavLink exact to="/" activeStyle={{ fill: '#ffffff' }}>
+        <NavLink exact to="/" activeStyle={{ fill: 'var(--color-fill)' }}>
           <HomeIconStyled />
         </NavLink>
         <NavLink data-cy="create" to={createPath ? '/' : '/Create'}>
           <AddIcon createPath={createPath} />
         </NavLink>
-        <NavLink to="/Overview" activeStyle={{ fill: '#ffffff' }}>
+        <NavLink to="/Overview" activeStyle={{ fill: 'var(--color-fill)' }}>
           <OverviewIconStyled />
         </NavLink>
       </NavigationStyled>
@@ -36,24 +36,25 @@ const NavigationStyled = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background: #bcbbbc;
+  background: var(--color-nav-bg);
 `
 
 const HomeIconStyled = styled(IconHome)`
-  z-index: 100;
+  z-index: 1;
 `
 
 const OverviewIconStyled = styled(IconMonthlyOverview)`
-  z-index: 100;
+  z-index: 1;
 `
 
 const AddIcon = styled(IconAdd)`
-  z-index: 100;
+  z-index: 1;
   position: relative;
   bottom: 30px;
   filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.3));
   border-radius: 50%;
-  background-color: ${(props) => (props.createPath ? '#ffb9b9' : '#fff')};
+  background-color: ${(props) =>
+    props.createPath ? 'var(--color-cancel-icon)' : 'var(--color-create-icon)'};
   transform: ${(props) => (props.createPath ? 'rotate(45deg)' : 'rotate(0)')};
   transform-origin: 50% 50%;
   transition: transform 0.3s;
