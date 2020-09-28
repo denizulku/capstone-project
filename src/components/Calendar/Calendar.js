@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import DayPicker from 'react-day-picker'
 import List from '../List/List'
-import Habit from '../List/List'
 import 'react-day-picker/lib/style.css'
 import styled from 'styled-components/macro'
 
@@ -20,6 +19,44 @@ export default function Calendar({ headline }) {
       backgroundColor: '#F0F0F0',
     },
   }
+
+  const renderDay = (date) => {
+    const habitsPerDay = habits
+      .filter((habit) => {
+        return (habit.completedDates || []).includes(date.toDateString())
+      })
+      .reduce((group, habit) => {
+        if (habit.color in group) {
+          group[habit.color]++
+        } else {
+          group[habit.color] = 1
+        }
+
+        return group
+      }, {})
+
+    return (
+      <>
+        <div>
+          {date.getDate()}
+          <div>
+            {Object.entries(habitsPerDay).map(([color, count]) => {
+              return (
+                <div
+                  style={{
+                    backgroundColor: color,
+                    borderRadius: '50%',
+                  }}
+                >
+                  {count}
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </>
+    )
+  }
   return (
     <>
       <h2>{headline}</h2>
@@ -32,6 +69,7 @@ export default function Calendar({ headline }) {
           onDayClick={(day) => {
             setSelectedDate(day.toDateString())
           }}
+          renderDay={renderDay}
         />
       </StyledCalendar>
       {selectedDate && (
