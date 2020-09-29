@@ -12,8 +12,7 @@ export default function List({
 }) {
   return (
     <>
-      <h2>{headline}</h2>
-      <CurrentDate>{displayToday()}</CurrentDate>
+      <h1>{!isReadOnly && <CurrentDate>{displayToday()}</CurrentDate>}</h1>
 
       {habits.map((habit) => {
         return (

@@ -9,14 +9,52 @@ const WEEKDAYS_SHORT = ['S', 'M', 'T', 'W', 'T', 'F', 'S']
 export default function Calendar({ headline }) {
   const modifiers = {
     sundays: { daysOfWeek: [0] },
+    mondays: { daysOfWeek: [1] },
+    tuesdays: { daysOfWeek: [2] },
+    wednesdays: { daysOfWeek: [3] },
+    thursdays: { daysOfWeek: [4] },
+    fridays: { daysOfWeek: [5] },
+    saturdays: { daysOfWeek: [6] },
   }
   const [selectedDate, setSelectedDate] = useState(new Date().toDateString())
   const habits = JSON.parse(localStorage.getItem('habits'))
 
   const modifiersStyles = {
     sundays: {
-      color: '#000000',
-      backgroundColor: '#F0F0F0',
+      color: 'var(--color-calendar-sundays)',
+      fontSize: '100%',
+      verticalAlign: '0',
+      padding: '12px',
+    },
+    mondays: {
+      fontSize: '100%',
+      verticalAlign: '0',
+      padding: '12px',
+    },
+    tuesdays: {
+      fontSize: '100%',
+      verticalAlign: '0',
+      padding: '12px',
+    },
+    wednesdays: {
+      fontSize: '100%',
+      verticalAlign: '0',
+      padding: '12px',
+    },
+    thursdays: {
+      fontSize: '100%',
+      verticalAlign: '0',
+      padding: '12px',
+    },
+    fridays: {
+      fontSize: '100%',
+      verticalAlign: '0',
+      padding: '12px',
+    },
+    saturdays: {
+      fontSize: '100%',
+      verticalAlign: '0',
+      padding: '12px',
     },
   }
 
@@ -44,12 +82,13 @@ export default function Calendar({ headline }) {
               return (
                 <div
                   style={{
+                    float: 'left',
                     backgroundColor: color,
                     borderRadius: '50%',
+                    width: '8px',
+                    height: '8px',
                   }}
-                >
-                  {count}
-                </div>
+                ></div>
               )
             })}
           </div>
@@ -59,9 +98,10 @@ export default function Calendar({ headline }) {
   }
   return (
     <>
-      <h2>{headline}</h2>
+      <h1>{headline}</h1>
       <StyledCalendar>
         <DayPicker
+          showOutsideDays
           weekdaysShort={WEEKDAYS_SHORT}
           firstDayOfWeek={1}
           modifiers={modifiers}
@@ -88,4 +128,5 @@ const StyledCalendar = styled.section`
   font-family: Roboto, sans-serif;
   display: flex;
   justify-content: center;
+  width: 100%;
 `
