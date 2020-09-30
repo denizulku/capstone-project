@@ -12,10 +12,10 @@ function App() {
 
   return (
     <Router>
-      <Header />
       <main>
         <Switch>
           <Route exact path="/">
+            <Header />
             <List
               habits={habits}
               onItemClick={toggleCompleted}
@@ -24,9 +24,11 @@ function App() {
             />
           </Route>
           <Route path="/create">
+            <Header />
             <Form onSubmit={addHabit} headline={'Create a habit'} />
           </Route>
           <Route path="/overview">
+            <Header />
             <Calendar headline={'Your monthly overview'} />
           </Route>
         </Switch>

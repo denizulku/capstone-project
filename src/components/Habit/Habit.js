@@ -43,12 +43,11 @@ export default function Habit({
 }
 
 const StyledHabit = styled.div`
-  display: inline-block;
   margin-top: 10px;
   display: flex;
   justify-content: center;
-  font-family: Roboto, sans-serif;
   font-size: 18px;
+  font-family: 'Helvetica', sans-serif;
 `
 const DeleteButton = styled(IconDelete)`
   filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.25));

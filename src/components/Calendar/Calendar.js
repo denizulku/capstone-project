@@ -96,6 +96,7 @@ export default function Calendar({ headline }) {
       </>
     )
   }
+
   return (
     <>
       <h1>{headline}</h1>
@@ -112,6 +113,7 @@ export default function Calendar({ headline }) {
           renderDay={renderDay}
         />
       </StyledCalendar>
+      <SelectedDate>{selectedDate}</SelectedDate>
       {selectedDate && (
         <List
           isReadOnly
@@ -129,4 +131,7 @@ const StyledCalendar = styled.section`
   display: flex;
   justify-content: center;
   width: 100%;
+`
+const SelectedDate = styled.p`
+  text-align: center;
 `

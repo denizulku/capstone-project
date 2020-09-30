@@ -7,22 +7,22 @@ body {
 }
 
 h1 {
-   font-family: Roboto;
-   margin-top: 10px;
+   font-family: Helvetica;
    font-size: 18px;
    text-align: center;
+   margin-bottom: 30px;
 }
 
 html {
    --color-fill: white;
    --color-create-icon: white;
-   --color-cancel-icon: #ffb9b9;
+   --color-cancel-icon: #f99;
    --color-nav-bg: #bcbbbc;
    --color-calendar-sundays: red;
  }
 
  p {
-    font-family: Roboto;
+    font-family: Helvetica;
     font-size: 18px;
  }
 

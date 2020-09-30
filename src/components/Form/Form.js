@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { v4 as uuidv4 } from 'uuid'
 import { CirclePicker } from 'react-color'
+import Header from '../Header/Header'
 
 export default function Form({ onSubmit, headline }) {
   const history = useHistory()
@@ -30,7 +31,7 @@ export default function Form({ onSubmit, headline }) {
           ref={register({
             required: true,
             pattern: { value: /.*\S.*/, message: 'This is required' },
-            maxLength: 26,
+            maxLength: 24,
           })}
         />
 
@@ -89,17 +90,18 @@ const FormStyled = styled.form`
   select,
   textarea {
     font-size: 18px;
+    outline: none;
   }
 `
 const InputStyled = styled.input`
-  box-sizing: content-box;
+  box-sizing: border-box;
   ::-moz-placeholder {
     color: black;
     opacity: 1;
   }
   --webkit-appearance: none;
   margin: 0;
-  padding-left: 13px;
+  padding-left: 14px;
   width: 100%;
   height: 7vh;
   border: 0;
