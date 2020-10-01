@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import { ReactComponent as HeaderLogo } from '../../components/assets/Logo/HeaderLogo.svg'
-import PropTypes from 'prop-types'
 
 export default function Header() {
   return <StyledHeader />

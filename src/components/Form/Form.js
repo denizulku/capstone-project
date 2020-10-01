@@ -106,7 +106,7 @@ const InputStyled = styled.input`
   height: 7vh;
   border: 0;
   border-radius: 10px;
-  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-black);
 `
 
 const AddButton = styled.button`
@@ -114,15 +114,15 @@ const AddButton = styled.button`
   align-items: center;
   justify-content: center;
   margin-top: 20px;
-  color: white;
+  color: var(--main-white);
   font-weight: bold;
-  background: #a296ff;
+  background: var(--color-add-button);
   border-radius: 10px;
   border: 10px;
   width: 100%;
   height: 7vh;
   margin-bottom: 120px;
-  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-black);
 `
 const SelectStyled = styled.select`
   --webkit-appearance: none;
@@ -140,7 +140,7 @@ const SelectStyled = styled.select`
   padding-left: 10px;
   border-radius: 10px;
   border: 0;
-  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-black);
 `
 
 const ColorInputStyled = styled.section`
@@ -149,6 +149,6 @@ const ColorInputStyled = styled.section`
   justify-content: center;
 `
 const ErrorMessage = styled.p`
-  color: red;
+  color: var(--main-red);
   font-size: 70%;
 `
