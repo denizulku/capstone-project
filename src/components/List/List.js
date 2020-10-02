@@ -30,7 +30,11 @@ export default function List({
           />
         )
       })}
-      <CreateHabitText>Click '+' to create a new habit</CreateHabitText>
+      <p>
+        {!isReadOnly && (
+          <CreateHabitText>Click '+' to create a new habit</CreateHabitText>
+        )}
+      </p>
     </>
   )
 }

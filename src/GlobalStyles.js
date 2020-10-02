@@ -9,6 +9,7 @@ export default createGlobalStyle`
 
 body {
    margin: 20px;
+   margin-bottom: 120px;
    padding: 0;
 }
 

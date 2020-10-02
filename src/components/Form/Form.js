@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { v4 as uuidv4 } from 'uuid'
 import { CirclePicker } from 'react-color'
-import Header from '../Header/Header'
 
 export default function Form({ onSubmit, headline }) {
   const history = useHistory()
