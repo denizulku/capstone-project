@@ -1,29 +1,17 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import HeaderLogo from '../../components/assets/Logo/HeaderLogo.svg'
-import PropTypes from 'prop-types'
-
-Header.propTypes = {
-  headline: PropTypes.string,
-}
-
-Header.defaultProps = {
-  headline: 'Dashboard',
-}
+import { ReactComponent as HeaderLogo } from '../../components/assets/Logo/HeaderLogo.svg'
 
 export default function Header() {
-  return (
-    <>
-      <StyledHeader>
-        <img src={HeaderLogo} alt="Logo for the App Habits" />
-      </StyledHeader>
-    </>
-  )
+  return <StyledHeader />
 }
 
-const StyledHeader = styled.header`
+const StyledHeader = styled(HeaderLogo)`
   margin-top: 0;
-  padding-top: 20px;
+  padding-top: 0;
+  left: 0;
+
+  z-index: 100;
   text-align: center;
   align-items: center;
   background-color: #ffffff;

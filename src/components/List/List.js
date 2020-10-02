@@ -3,11 +3,16 @@ import styled from 'styled-components/macro'
 import Habit from '../Habit/Habit'
 import { displayToday } from '../../util'
 
-export default function List({ habits, onRemove, onItemClick, headline }) {
+export default function List({
+  habits,
+  onRemove,
+  onItemClick,
+  headline,
+  isReadOnly,
+}) {
   return (
     <>
-      <h2>{headline}</h2>
-      <CurrentDate>{displayToday()}</CurrentDate>
+      <h1>{!isReadOnly && <CurrentDate>{displayToday()}</CurrentDate>}</h1>
 
       {habits.map((habit) => {
         return (
@@ -15,13 +20,21 @@ export default function List({ habits, onRemove, onItemClick, headline }) {
             key={habit.id}
             id={habit.id}
             {...habit}
-            completed={habit.completed}
+            completed={
+              (habit.completedDates || []).indexOf(new Date().toDateString()) >
+              -1
+            }
             onItemClick={onItemClick}
             onRemove={onRemove}
+            isReadOnly={isReadOnly}
           />
         )
       })}
-      <CreateHabitText>Click '+' to create a new habit</CreateHabitText>
+      <p>
+        {!isReadOnly && (
+          <CreateHabitText>Click '+' to create a new habit</CreateHabitText>
+        )}
+      </p>
     </>
   )
 }

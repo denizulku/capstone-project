@@ -33,6 +33,7 @@ const NavigationStyled = styled.div`
   border-top-left-radius: 10px;
   position: fixed;
   bottom: 0;
+  left: 0;
   display: flex;
   justify-content: space-evenly;
   align-items: center;

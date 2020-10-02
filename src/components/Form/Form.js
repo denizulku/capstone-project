@@ -21,7 +21,7 @@ export default function Form({ onSubmit, headline }) {
   }
   return (
     <>
-      <h2>{headline}</h2>
+      <h1>{headline}</h1>
       <FormStyled onSubmit={handleSubmit(onHabitSubmit)}>
         <InputStyled
           data-cy="habits"
@@ -30,7 +30,7 @@ export default function Form({ onSubmit, headline }) {
           ref={register({
             required: true,
             pattern: { value: /.*\S.*/, message: 'This is required' },
-            maxLength: 26,
+            maxLength: 24,
           })}
         />
 
@@ -49,7 +49,7 @@ export default function Form({ onSubmit, headline }) {
           name="category"
           ref={register({ required: true })}
         >
-          <option value="">Choose a category for your habit</option>
+          <option value="">Choose a category</option>
           <option value="Morning routine">Morning routine</option>
           <option value="Nighttime routine">Nighttime routine</option>
           <option value="Fitness">Fitness</option>
@@ -63,7 +63,7 @@ export default function Form({ onSubmit, headline }) {
 
         {errors.category && <ErrorMessage>This is required</ErrorMessage>}
 
-        <Label>Choose a color:</Label>
+        <p>Choose a color:</p>
         <ColorInputStyled>
           <CirclePicker
             name="color"
@@ -75,7 +75,9 @@ export default function Form({ onSubmit, headline }) {
 
         {errors.color && <ErrorMessage>This is required</ErrorMessage>}
 
-        <AddButton type="submit">Add habit</AddButton>
+        <AddButton type="submit">
+          <p>Add habit</p>
+        </AddButton>
       </FormStyled>
     </>
   )
@@ -86,31 +88,58 @@ const FormStyled = styled.form`
   input,
   select,
   textarea {
-    font-size: 16px;
+    font-size: 18px;
+    outline: none;
   }
 `
 const InputStyled = styled.input`
-  width: 70%;
-  height: 5vh;
+  box-sizing: border-box;
+  ::-moz-placeholder {
+    color: black;
+    opacity: 1;
+  }
+  --webkit-appearance: none;
+  margin: 0;
+  padding-left: 14px;
+  width: 100%;
+  height: 7vh;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: var(--shadow-black);
 `
 
 const AddButton = styled.button`
-  margin-top: 30px;
-  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  color: var(--main-white);
   font-weight: bold;
-  background: #a296ff;
-  border-radius: 3px;
+  background: var(--color-add-button);
+  border-radius: 10px;
   border: 10px;
-  width: 70%;
+  width: 100%;
   height: 7vh;
   margin-bottom: 120px;
+  box-shadow: var(--shadow-black);
 `
 const SelectStyled = styled.select`
   --webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='grey' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 10px;
   margin-top: 10px;
+  margin-bottom: 10px;
   position: relative;
-  height: 5vh;
-  width: 73%;
+  height: 6vh;
+  width: 100%;
+  padding-left: 10px;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: var(--shadow-black);
 `
 
 const ColorInputStyled = styled.section`
@@ -119,11 +148,6 @@ const ColorInputStyled = styled.section`
   justify-content: center;
 `
 const ErrorMessage = styled.p`
-  color: red;
+  color: var(--main-red);
   font-size: 70%;
-`
-
-const Label = styled.p`
-  font-size: 16px;
-  padding-top: 10px;
 `

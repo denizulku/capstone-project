@@ -1,7 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function useHabits() {
-  const [habits, setHabits] = useState([])
+  const [habits, setHabits] = useState(
+    JSON.parse(localStorage.getItem('habits')) || []
+  )
+
+  useEffect(() => {
+    localStorage.setItem('habits', JSON.stringify(habits))
+  }, [habits])
 
   function addHabit(newHabit) {
     setHabits([...habits, newHabit])
@@ -12,7 +18,23 @@ export default function useHabits() {
     const habit = habits[index]
     const before = habits.slice(0, index)
     const after = habits.slice(index + 1)
-    const updatedHabit = { ...habit, completed: !habit.completed }
+    const completedDates = habit.completedDates || []
+    const currentDate = new Date().toDateString()
+    const currentDateIndex = completedDates.indexOf(currentDate)
+    const habitChecked = currentDateIndex === -1
+
+    if (habitChecked) {
+      completedDates.push(currentDate)
+    } else {
+      completedDates.splice(currentDateIndex, 1)
+    }
+
+    const updatedHabit = {
+      ...habit,
+
+      completedDates: completedDates,
+    }
+
     setHabits([...before, updatedHabit, ...after])
   }
 

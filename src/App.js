@@ -12,8 +12,8 @@ function App() {
 
   return (
     <Router>
-      <Header />
       <main>
+        <Header />
         <Switch>
           <Route exact path="/">
             <List
@@ -27,7 +27,9 @@ function App() {
             <Form onSubmit={addHabit} headline={'Create a habit'} />
           </Route>
           <Route path="/overview">
-            <Calendar headline={'Your monthly overview'} />
+            <Calendar
+              headline={'Your monthly overview with your completed habits'}
+            />
           </Route>
         </Switch>
       </main>
