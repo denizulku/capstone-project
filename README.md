@@ -10,7 +10,10 @@ This app is my final project I developed during the neuefische Web Development B
 
 <b align="left">..even Ash wants to track 'em all!</b>
 
-<img src="src/components/assets/gottatrackemall.png" width="200px">
+<img src="src/components/assets/gottatrackemall.png" width="350px">
+<br>
+<br>
+<br>
 
 ## Tech stack
 
