@@ -20,7 +20,7 @@ This app is my final project I developed during the neuefische Web Development B
 <br>
 <br>
 <br>
----
+
 
 ## Tech stack
 
