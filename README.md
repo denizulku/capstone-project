@@ -7,15 +7,8 @@
 This app is my final project I developed during the neuefische Web Development Bootcamp in September 2020 in Hamburg, Germany.
 
 [Demo](https://capstone-project-nine.vercel.app/)
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+<img src="src/components/assets/gottatrackemall.png">
 
 ---
 
