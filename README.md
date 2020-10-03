@@ -8,7 +8,9 @@ This app is my final project I developed during the neuefische Web Development B
 
 [Demo](https://capstone-project-nine.vercel.app/)
 
-<img src="src/components/assets/gottatrackemall.png">
+<b align="left">..even Ash wants to track 'em all!</b>
+
+<img src="src/components/assets/gottatrackemall.png" width="200px">
 
 ## Tech stack
 
