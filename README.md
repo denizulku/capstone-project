@@ -1,10 +1,14 @@
-## ![Logo](src/components/assets/Logo/HeaderLogo.svg)
+<div align="center"><img src="src/components/assets/Logo/HeaderLogo.svg" ></div>
+
+---
 
 <img src="src/components/assets/DenizUelkue_Habits.gif" align="left"> „This year I REALLY am determined to go to the gym more often!“ - Sounds familiar? ‚Habits‘ helps you build your aspired habits by providing a clear overview. The integrated calendar keeps track of your completed habits, helping with reflecting and improving so you can stick to your goals.
 
 This app is my final project I developed during the neuefische Web Development Bootcamp in September 2020 in Hamburg, Germany.
 
 [Demo](https://capstone-project-nine.vercel.app/)
+
+---
 
 ## Tech stack
 
