@@ -1,6 +1,6 @@
-## ![Logo](src/components/assets/Logo/HeaderLogo.svg?style=centerme)
+## ![Logo](src/components/assets/Logo/HeaderLogo.svg)
 
-# Habits
+„This year I REALLY am determined to go to the gym more often!“ - Sounds familiar? ‚Habits‘ helps you build your aspired habits by providing a clear overview. The integrated calendar keeps track of your completed habits, helping with reflecting and improving so you can stick to your goals.
 
 This app is my final project I developed during the neuefische Web Development Bootcamp in September 2020 in Hamburg, Germany.
 
