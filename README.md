@@ -10,8 +10,6 @@ This app is my final project I developed during the neuefische Web Development B
 
 <img src="src/components/assets/gottatrackemall.png">
 
----
-
 ## Tech stack
 
 - React
