@@ -1,4 +1,4 @@
-## ![Logo](src/components/assets/Logo/HeaderLogo.svg)
+## ![Logo](src/components/assets/Logo/HeaderLogo.svg?style=centerme)
 
 # Habits
 
