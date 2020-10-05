@@ -6,12 +6,6 @@ export default {
   component: Form,
 }
 
-const Template = (args) => <Form {...args} />
+const Template = () => <Form />
 
-// Each story then reuses that template
-export const Primary = Template.bind({})
-
-Primary.args = {
-  habits: ['foo', 'bar'],
-}
-Primary.argTypes = { onSubmit: { action: 'addHabit' } }
+export const CreateForm = Template.bind({})
