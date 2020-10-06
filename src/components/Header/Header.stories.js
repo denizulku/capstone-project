@@ -1,12 +1,11 @@
 import React from 'react'
 import Header from './Header'
-import { addDecorator } from '@storybook/react'
-
-addDecorator((storyFn) => <div style={{ width: '375px' }}>{storyFn()}</div>)
 
 export default {
+  title: 'Header',
   component: Header,
-  title: 'General/Header',
 }
 
-export const Default = () => <Header />
+const Template = (args) => <Header {...args} />
+
+export const Headline = Template.bind({})

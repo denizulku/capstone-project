@@ -3,13 +3,7 @@ import styled from 'styled-components/macro'
 import Habit from '../Habit/Habit'
 import { displayToday } from '../../util'
 
-export default function List({
-  habits,
-  onRemove,
-  onItemClick,
-  headline,
-  isReadOnly,
-}) {
+export default function List({ habits, onRemove, onItemClick, isReadOnly }) {
   return (
     <>
       <h1>{!isReadOnly && <CurrentDate>{displayToday()}</CurrentDate>}</h1>
@@ -30,11 +24,10 @@ export default function List({
           />
         )
       })}
-      <p>
-        {!isReadOnly && (
-          <CreateHabitText>Click '+' to create a new habit</CreateHabitText>
-        )}
-      </p>
+
+      {!isReadOnly && (
+        <CreateHabitText>Click '+' to create a new habit</CreateHabitText>
+      )}
     </>
   )
 }

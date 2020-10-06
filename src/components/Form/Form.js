@@ -21,7 +21,6 @@ export default function Form({ onSubmit, headline }) {
   }
   return (
     <>
-      <h1>{headline}</h1>
       <FormStyled onSubmit={handleSubmit(onHabitSubmit)}>
         <InputStyled
           data-cy="habits"

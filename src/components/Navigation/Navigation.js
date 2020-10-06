@@ -7,15 +7,15 @@ import { ReactComponent as IconAdd } from '../../components/assets/icons/IconAdd
 import { ReactComponent as IconMonthlyOverview } from '../../components/assets/icons/IconMonthlyOverview.svg'
 
 export default function Navigation() {
-  const createPath = useLocation().pathname === '/Create' ? 1 : 0
+  const createpath = useLocation().pathname === '/Create' ? 1 : 0
   return (
     <>
       <NavigationStyled>
         <NavLink exact to="/" activeStyle={{ fill: 'var(--color-fill)' }}>
           <HomeIconStyled />
         </NavLink>
-        <NavLink data-cy="create" to={createPath ? '/' : '/Create'}>
-          <AddIcon createPath={createPath} />
+        <NavLink data-cy="create" to={createpath ? '/' : '/Create'}>
+          <AddIcon createpath={createpath} />
         </NavLink>
         <NavLink to="/Overview" activeStyle={{ fill: 'var(--color-fill)' }}>
           <OverviewIconStyled />
