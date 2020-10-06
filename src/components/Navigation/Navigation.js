@@ -55,8 +55,8 @@ const AddIcon = styled(IconAdd)`
   filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.3));
   border-radius: 50%;
   background-color: ${(props) =>
-    props.createPath ? 'var(--color-cancel-icon)' : 'var(--color-create-icon)'};
-  transform: ${(props) => (props.createPath ? 'rotate(45deg)' : 'rotate(0)')};
+    props.createpath ? 'var(--color-cancel-icon)' : 'var(--color-create-icon)'};
+  transform: ${(props) => (props.createpath ? 'rotate(45deg)' : 'rotate(0)')};
   transform-origin: 50% 50%;
   transition: transform 0.3s;
 `
